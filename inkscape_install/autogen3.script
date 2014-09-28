@@ -1,0 +1,110 @@
+Script started on dim. 28 sept. 2014 23:35:25 CEST
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m exitsudo apt-get install intltool[17P./autogen.sh
+*** No autopoint found, please install the autopoint package ***
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m ./autogen.sh[8Pexitsudo apt-get install intltool[K[K[K[K[K[K[K[Kautopoint
+[sudo] password for lucas: 
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following NEW packages will be installed:
+  autopoint
+0 upgraded, 1 newly installed, 0 to remove and 40 not upgraded.
+Need to get 370 kB of archives.
+After this operation, 454 kB of additional disk space will be used.
+0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main autopoint all 0.18.3.1-1ubuntu3 [370 kB]
+            0% [1 autopoint 0 B/370 kB 0%]                              83% [1 autopoint 307 kB/370 kB 83%]                                   100% [Working]              Fetched 370 kB in 1s (350 kB/s)
+Selecting previously unselected package autopoint.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 147481 files and directories currently installed.)
+Preparing to unpack .../autopoint_0.18.3.1-1ubuntu3_all.deb ...
+Unpacking autopoint (0.18.3.1-1ubuntu3) ...
+Processing triggers for man-db (2.6.7.1-1) ...
+Setting up autopoint (0.18.3.1-1ubuntu3) ...
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m sudo apt-get install autopoint[18P./autogen.sh
+Copying file ABOUT-NLS
+Creating directory build-aux
+Copying file build-aux/config.rpath
+Copying file m4/codeset.m4
+Copying file m4/gettext.m4
+Copying file m4/glibc2.m4
+Copying file m4/glibc21.m4
+Copying file m4/iconv.m4
+Copying file m4/intdiv0.m4
+Copying file m4/intl.m4
+Copying file m4/intldir.m4
+Copying file m4/intlmacosx.m4
+Copying file m4/intmax.m4
+Copying file m4/inttypes-pri.m4
+Copying file m4/inttypes_h.m4
+Copying file m4/lcmessage.m4
+Copying file m4/lib-ld.m4
+Copying file m4/lib-link.m4
+Copying file m4/lib-prefix.m4
+Copying file m4/lock.m4
+Copying file m4/longlong.m4
+Copying file m4/nls.m4
+Copying file m4/po.m4
+Copying file m4/printf-posix.m4
+Copying file m4/progtest.m4
+Copying file m4/size_max.m4
+Copying file m4/stdint_h.m4
+Copying file m4/uintmax_t.m4
+Copying file m4/visibility.m4
+Copying file m4/wchar_t.m4
+Copying file m4/wint_t.m4
+Copying file m4/xsize.m4
+Copying file po/Makefile.in.in
+Copying file po/Makevars.template
+Copying file po/Rules-quot
+Copying file po/boldquot.sed
+Copying file po/en@boldquot.header
+Copying file po/en@quot.header
+Copying file po/insert-header.sin
+Copying file po/quot.sed
+Copying file po/remove-potcdate.sin
+autoreconf: Entering directory `.'
+autoreconf: running: intltoolize --automake --copy --force
+autoreconf: running: aclocal --force -I m4 ${ACLOCAL_FLAGS}
+autoreconf: configure.ac: tracing
+autoreconf: configure.ac: not using Libtool
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:217: warning: The 'AM_PROG_MKDIR_P' macro is deprecated, and its use is discouraged.
+configure.ac:217: You should use the Autoconf-provided 'AC_PROG_MKDIR_P' macro instead,
+configure.ac:217: and use '$(MKDIR_P)' instead of '$(mkdir_p)'in your Makefile.am files.
+configure.ac:25: installing 'build-aux/ar-lib'
+configure.ac:25: installing 'build-aux/compile'
+configure.ac:19: installing 'build-aux/config.guess'
+configure.ac:19: installing 'build-aux/config.sub'
+configure.ac:23: installing 'build-aux/install-sh'
+configure.ac:23: installing 'build-aux/missing'
+share/extensions/Makefile.am:16: warning: wildcard $(srcdir: non-POSIX variable name
+share/extensions/Makefile.am:16: (probably a GNU make extension)
+share/extensions/Makefile.am:32: warning: wildcard $(srcdir: non-POSIX variable name
+share/extensions/Makefile.am:32: (probably a GNU make extension)
+share/palettes/Makefile.am:34: warning: foreach i,$(palettes_i18n: non-POSIX variable name
+share/palettes/Makefile.am:34: (probably a GNU make extension)
+share/symbols/Makefile.am:5: warning: wildcard $(srcdir: non-POSIX variable name
+share/symbols/Makefile.am:5: (probably a GNU make extension)
+share/symbols/Makefile.am:10: warning: wildcard $(srcdir: non-POSIX variable name
+share/symbols/Makefile.am:10: (probably a GNU make extension)
+share/templates/Makefile.am:115: warning: foreach i,$(templates_i18n: non-POSIX variable name
+share/templates/Makefile.am:115: (probably a GNU make extension)
+src/Makefile.am:25: error: library used but 'RANLIB' is undefined
+src/Makefile.am:25:   The usual way to define 'RANLIB' is to add 'AC_PROG_RANLIB'
+src/Makefile.am:25:   to 'configure.ac' and run 'autoconf' again.
+src/extension/dbus/Makefile_insert:61: error: Libtool library used but 'LIBTOOL' is undefined
+src/extension/dbus/Makefile_insert:61:   The usual way to define 'LIBTOOL' is to add 'LT_INIT'
+src/extension/dbus/Makefile_insert:61:   to 'configure.ac' and run 'aclocal' and 'autoconf' again.
+src/extension/dbus/Makefile_insert:61:   If 'LT_INIT' is in 'configure.ac', make sure
+src/extension/dbus/Makefile_insert:61:   its definition is in aclocal's search path.
+src/Makefile.am:111:   'src/extension/dbus/Makefile_insert' included from here
+src/Makefile.am: installing 'build-aux/depcomp'
+parallel-tests: installing 'build-aux/test-driver'
+autoreconf: automake failed with exit status: 1
+
+Done!  Please run './configure' now.
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m exit
+exit
+
+Script done on dim. 28 sept. 2014 23:36:24 CEST

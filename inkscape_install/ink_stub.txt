@@ -1,0 +1,34 @@
+Inkscape impossible build
+
+For a project on Coursera, I though I would tweak a bit Inkscape to implement an algorithm based on layering. For that idea, I needed to build Inkscape from scratch, which reveals to be much harder than expected.
+
+Step 0 : Fresh start
+
+For that matter, I've booten up a fresh VM with a 64-bit Mint on it. Set up bzr, and retrieve inskcape source code. That's when the fun begins.
+
+On the wiki (wiki.inkscape.org/wiki/index.php/Compiliing_Inkscape) and (www.inkscape.org/en/develop/getting-started) it's quite straightforward : autogen, configure and make. Reality is quite different :p
+
+Step 2 : autogen - First attempt
+
+Well, I need the autotools. I figured I would had to install it, but it's not described in the documentation.
+
+Step 2 : autogen - Second attempt
+
+Same thing, but for intltoolize, which can be installed using sudo apt-get instal intltool & autopoint. 
+
+Step 2 : autogen - Third attempt
+
+Ok, I don't have missing lib anymore, and autogen seem to work, although it is outputing warnings about deprecated lines and automake seemed to have failed ! Whatever.
+
+Step 3 : configure - First attempt
+
+Ok, "C compiler cannot create executable" : wtf ?
+Apparently this can be fixed by installing libc-dev package.
+
+Step 3 : configure - Second attempt
+
+A new error : LT_PREREQ is not recognized by the configuration script. That con be solved by installing the following packagess : autoconf libtool autoconf-archive
+
+Step 3 : configure - Third attempt
+
+New missing dependency : freetyp-config, which can be solved by installing libfreetype6-dev. Same thing littlecms  : sudo apt-get install liblcms2-dev.When re-executing configure, we obtain a number of package missing (as always).

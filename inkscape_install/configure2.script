@@ -1,0 +1,82 @@
+Script started on dim. 28 sept. 2014 23:53:13 CEST
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m sudoa[C[C[C[C[C[K apt-get install libc-dev
+[sudo] password for lucas: 
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+Note, selecting 'libc6-dev' instead of 'libc-dev'
+The following extra packages will be installed:
+  libc-dev-bin
+Suggested packages:
+  glibc-doc
+The following NEW packages will be installed:
+  libc-dev-bin libc6-dev
+0 upgraded, 2 newly installed, 0 to remove and 40 not upgraded.
+Need to get 1 979 kB of archives.
+After this operation, 12,8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc-dev-bin amd64 2.19-0ubuntu6.3 [69,1 kB]
+            0% [1 libc-dev-bin 0 B/69,1 kB 0%]                                  3% [Working]            Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc6-dev amd64 2.19-0ubuntu6.3 [1 910 kB]
+            3% [2 libc6-dev 0 B/1 910 kB 0%]                                19% [2 libc6-dev 307 kB/1 910 kB 16%]33% [2 libc6-dev 593 kB/1 910 kB 31%]49% [2 libc6-dev 906 kB/1 910 kB 47%]                                     62% [2 libc6-dev 1 154 kB/1 910 kB 60%]81% [2 libc6-dev 1 532 kB/1 910 kB 80%]96% [2 libc6-dev 1 836 kB/1 910 kB 96%]                                       100% [Working]              Fetched 1 979 kB in 3s (555 kB/s)
+Selecting previously unselected package libc-dev-bin.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 147487 files and directories currently installed.)
+Preparing to unpack .../libc-dev-bin_2.19-0ubuntu6.3_amd64.deb ...
+Unpacking libc-dev-bin (2.19-0ubuntu6.3) ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../libc6-dev_2.19-0ubuntu6.3_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.19-0ubuntu6.3) ...
+Processing triggers for man-db (2.6.7.1-1) ...
+Setting up libc-dev-bin (2.19-0ubuntu6.3) ...
+Setting up libc6-dev:amd64 (2.19-0ubuntu6.3) ...
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m cd ../build
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m ../inska[Kc[K[K[Kkscape.[K/configure [K
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking how to create a pax tar archive... gnutar
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking for g++... no
+checking for c++... no
+checking for gpp... no
+checking for aCC... no
+checking for CC... no
+checking for cxx... no
+checking for cc++... no
+checking for cl.exe... no
+checking for FCC... no
+checking for KCC... no
+checking for RCC... no
+checking for xlC_r... no
+checking for xlC... no
+checking whether we are using the GNU C++ compiler... no
+checking whether g++ accepts -g... no
+checking dependency style of g++... none
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking dependency style of gcc... gcc3
+../inkscape/configure: line 5967: syntax error near unexpected token `2.2'
+../inkscape/configure: line 5967: `LT_PREREQ(2.2)'
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m exit
+Script done on dim. 28 sept. 2014 23:54:50 CEST

@@ -1,0 +1,58 @@
+Script started on dim. 28 sept. 2014 23:42:36 CEST
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m ./[K[Kcd ..
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop $[00m mkdir build
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop $[00m ls 
+[0m[01;34mbuild[0m  [01;34minkscape[0m  [01;34mlucasg.github.io[0m
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop $[00m cd buil
+bash: cd: buil: No such file or directory
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop $[00m cd build
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m ls
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m export CFLAGS = "-g -O0 -Wall CC" CC[C[C[C='ca[Kcache  gcc"
+> 
+> ^C
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m export CFLAGS = "-g -O0 -Wall" CC='ccache ggcc"
+[A[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"-g -O0 -Wall" CC='ccache gc[C[1P"[A[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C="-g -O0 -Wall" CC='ccache gcc[1P"[A[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m [C[C[C[C[C[C[C[C[C[C[C[C[C
+
+
+> ^C
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m export CFLAGS="-g -O0 -Wall" CC='ccache gccc"
+[A[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cccache gcc" [A[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"ccache gcc"[A[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m export CFLAGS="-g -O0 -Wall" CC="ccache gccc"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CXFLAGS="-g -O0 -Wall" CC="ccache gcc"[A[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m [C[C[C[C[C[C[C[C[CXFLAGS="-g -O0 -Wall" CC="ccache g[Cc"[A[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C="ccache gc[C[1P"[A[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CX="ccache g[Cc"[A[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CX="ccache gcc"[A[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[1P"[1P"+"+"
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m ../inkscape/configure 
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking how to create a pax tar archive... gnutar
+checking for style of include used by make... GNU
+checking for gcc... ccache gcc
+checking whether the C compiler works... no
+configure: error: in `/home/lucas/Desktop/build':
+configure: error: C compiler cannot create executables
+See `config.log' for more details
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m s[K../inkscape/configure [1@s[1@u[1@d[1@o[1@ 
+[sudo] password for lucas: 
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking how to create a pax tar archive... gnutar
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... no
+configure: error: in `/home/lucas/Desktop/build':
+configure: error: C compiler cannot create executables
+See `config.log' for more details
+[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/build $[00m exit
+Script done on dim. 28 sept. 2014 23:45:48 CEST

@@ -1,9 +1,0 @@
-Inkscape impossible build
-
-For a project on Coursera, I though I would tweak a bit Inkscape to implement an algorithm based on layering. For that idea, I needed to build Inkscape from scratch, which reveals to be much harder than expected.
-
-Step 1 : Fresh start
-
-For that matter, I've booten up a fresh VM with a 64-bit Mint on it. Set up bzr, and retrieve inskcape source code. That's when the fun begins.
-
-On the wiki (wiki.inkscape.org/wiki/index.php/Compiliing_Inkscape) and (www.inkscape.org/en/develop/getting-started) it's quite straightforward : autogen, configure and make. Reality is quite different :p
