@@ -2,4 +2,4 @@ name: lucasg
 highlighter: pygments
 markdown: kramdown
 github: [Repository metadata]
-permalink: /blog/:year/:month/:day/:title
+permalink: /post/:year/:month/:day/:title
