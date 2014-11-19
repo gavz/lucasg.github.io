@@ -17,17 +17,17 @@ Bruteforce decoding
 
 As a said previously, I mainly implemented the solvers in C, but for the bruteforce script I chose Python, because that's where the language really shine :
 
-``` python bruteforce breaking http://lucasg.gihtub.io/python-bruteforce-caesar-break caesar cipher bruteforcing using Python script
+```		python bruteforce breaking http://lucasg.gihtub.io/python-bruteforce-caesar-break caesar cipher bruteforcing using Python script
 
-d = open(sys.argv[1], "rb").readlines()
+	d = open(sys.argv[1], "rb").readlines()
 
-for i,line in enumerate(d):
+	for i,line in enumerate(d):
 
-	hexline = line[:-1].decode("hex")
-	print "\n", i,": hexline ->", hexline
+		hexline = line[:-1].decode("hex")
+		print "\n", i,": hexline ->", hexline
 
-	for c in range(127):
-		print c," :" , chr(c), " -> ", ''.join([ chr(c ^ ord(x)) for x in hexline])
+		for c in range(127):
+			print c," :" , chr(c), " -> ", ''.join([ chr(c ^ ord(x)) for x in hexline])
 
 ```
 
