@@ -20,31 +20,35 @@
 <body>
 
     <header>
-        <h1>Lucasg.github.io</h1>
-        <p>Personal rants</p>
-      </header>
+      <h1>
+        <a href="{{ site.url }}"> Lucasg.github.io</a>
+      </h1>
+      
+      <p>{{page.title}}</p>
+    </header>
 
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/lucasg" class="button fork"><strong>View On GitHub</strong></a>
-      </div><!-- end banner -->
-
-    <div class="wrapper">
-    <nav>
-	    		<ul>
-	        		<li><a href="/">Home</a></li>
-		        	<li><a href="/about">About</a></li>
-	        		<li><a href="/cv">CV</a></li>
-	        		<li><a href="/blog">Blog</a></li>
-	    		</ul>
-	</nav>
-      <section>
-        <h3>
+    
+    <section>
+      <h3>
 
 			<div class="container">
-			{{ content }}
+			 {{ content }}
 			</div><!-- /.container -->
+
+      </h3>
+    </section>
+
+    <div id="banner">
+        <span><a href="https://github.com/lucasg" id="logo"></a>
+        </span>
+
+        <a href="{{ site.url }}" class="button">About</a>
+        <a href="{{ site.url }} "class="button">CV</a>
+        <a href="{{ site.url }}" class="button">Links</a>
+
+
+    </div><!-- end banner -->
+
     
   </body>
 </html>
