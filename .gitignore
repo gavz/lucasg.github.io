@@ -1,2 +1,4 @@
-_sites
+_site
 _config_dev.yml
+serve_dev.sh
+guides
