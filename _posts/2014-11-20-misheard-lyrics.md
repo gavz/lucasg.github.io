@@ -10,7 +10,7 @@ I'm currently listening the Decade Mix made by Flight Facilities on SoundCloud -
 
 I'm not a native English speaker, so here's what I've heard : "Street lights running through my mind", which is what I'm typing. And this is the result from Google :
 
-![Results from google search](/images/misheard-lyrics.PNG)
+![Results from google search](/assets/misheard-lyrics.PNG)
 
 
 
