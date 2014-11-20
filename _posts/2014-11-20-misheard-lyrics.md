@@ -10,7 +10,7 @@ I'm currently listening the Decade Mix made by Flight Facilities on SoundCloud -
 
 I'm not a native English speaker, so here's what I've heard : "Street lights running through my mind", which is what I'm typing. And this is the result from Google :
 
-![Results from google search]({{ site.url }}/images/misheard-lyrics.png)
+![Results from google search]({{ site.url }}/images/misheard-lyrics.PNG)
 
 
 Google correctly guessed "These sounds fall into my minds" from "Street lights running through my mind" ! Well I've learn ed since that this particular song from the BucketHeads is a  [mondegreen](http://en.wikipedia.org/wiki/Mondegreen), and my guess wasn't too far from the original song lyrics.
