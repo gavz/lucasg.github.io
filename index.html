@@ -6,6 +6,23 @@ title: Personal Rants
 	<ul class="posts">
 
 	  {% for post in site.posts %}
-	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+
+		<article>
+			<header>
+			 <h1>
+			 	<a href="{{ post.url }}">{{ post.title }}</a>
+				<hr />
+			 	<span class="date">{{ post.date | date_to_string }}</span>
+
+			</h1>
+			</header>
+
+			<div style="clear: both;"></div>
+			<div class="excerpt">{{ post.excerpt }}</div>
+			
+
+			
+
+		</article>
 	  {% endfor %}
 	</ul>
