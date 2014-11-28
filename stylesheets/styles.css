@@ -1000,7 +1000,7 @@ div.footer {
   }
 
   div.title {
-    padding: 20px 20px;
+    padding: 5px 20px;
     margin: 0;
   }
   div.title h1 {
@@ -1012,7 +1012,7 @@ div.footer {
     -ms-text-overflow: ellipsis;
   }
   div.title p {
-    display: none;
+    /*display: none;*/
   }
 
   #banner {
@@ -1037,12 +1037,12 @@ div.footer {
   }
 }
 @media print, screen and (max-width: 480px) {
-  header {
+  div.title {
     position: relative;
     padding: 5px 0px;
     min-height: 0px;
   }
-  header h1 {
+  div.title h1 {
     font-size: 24px;
     white-space: nowrap;
     overflow: hidden;
@@ -1056,7 +1056,9 @@ div.footer {
   }
 
   #banner {
-    display: none;
+    /*display: none;*/
+    position: relative;
+    top:0px;
   }
 
   header ul {
