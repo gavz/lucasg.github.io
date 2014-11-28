@@ -961,7 +961,7 @@ div.footer {
   }
   header h1, section h1, footer h1 {
     white-space: normal;
-    overflow: hidden;
+    /*overflow: hidden;*/
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
     -ms-text-overflow: ellipsis;
