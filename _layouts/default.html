@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
     <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ site.url }}/stylesheets/blog.css">
     <link rel="stylesheet" href="{{ site.url }}/stylesheets/styles.css">
     <link rel="stylesheet" href="{{ site.url }}/stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -19,23 +20,23 @@
 
 <body>
 
-    <header>
+    <div class="title">
       <h1>
         <a href="{{site.url}}/"> Lucasg.github.io</a>
       </h1>
       
       <p>{{page.title}}</p>
-    </header>
+    </div>
 
     
     <section>
-      <h3>
+      
 
 			<div class="container">
 			 {{ content }}
 			</div><!-- /.container -->
 
-      </h3>
+      
     </section>
 
     <div id="banner">
