@@ -7,6 +7,8 @@ date: 2014-11-19
 Not a long time ago, I started to give myself into the Cryptopals Matasano challenge. Knowing little about cryptographics, I thought that
 was a good idea to learn a thing or two about encryption, as well as brushing off my C skills (I'm currently a C++ guy).
 
+<!--more-->
+
 The first set of exercises, which use a qualifing set of basics challenges, is pretty easy to solve (though it's not a matter of minutes as they
 say if you really want properly implement the solution). However the first hurdle is located in the fourth exercise : "Detect single-character XOR".
 
@@ -28,8 +30,7 @@ for i,line in enumerate(d):
   print "\n", i,": hexline ->", hexline
 
   for c in range(127):
-    print c," :" , chr(c), " -> ",
-            		''.join([ chr(c ^ ord(x)) for x in hexline])
+    print c," :" , chr(c), " -> ", ''.join([ chr(c ^ ord(x)) for x in hexline]) 
 
 {% endhighlight python %}
 
