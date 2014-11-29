@@ -726,13 +726,13 @@ dt {
 }
 
 div.title {
-  padding: 25px 20px 40px 20px;
+  padding: 25px 25px 40px 40px;
   margin: 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  /*width: 100%;*/
   text-align: center;
   background: url(../images/background.png) #4276b6;
   -moz-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
