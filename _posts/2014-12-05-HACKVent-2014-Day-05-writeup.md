@@ -24,14 +24,15 @@ I'm not an English native person, so I don't know half of the idiomatic expressi
 
 
 Results from google calc : 
-    * megasecond -> 10e6 s
-	* baker dozen -> 13
-	* donkeypower -> 250.033167 W
-	* number of horns on a unicorn -> 1
-	* once in a blue moon -> 1.16699016 10e-8 Hz
-	* answer to life the universe and everything -> 42
-	* a beard second -> 5 nm
-	* earth mass -> 5.97219 10e24 kg
+
+* megasecond : <code> 10e6 s </code>
+* baker dozen : <code> 13 </code>
+* donkeypower : <code> 250.033167 W </code>
+* number of horns on a unicorn : <code> 1 </code>
+* once in a blue moon : <code> 1.16699016 10e-8 Hz </code>
+* answer to life the universe and everything : <code> 42 </code>
+* a beard second : <code> 5 nm </code>
+* earth mass : <code> 5.97219 10e24 kg </code>
 
 
 Once I got all this number, I didn't feel like I was getting progress. I got a hint previously from the author of the challenge saying that the result is a integer and all I got was floating-point values due to earth mass and once in a blue moon being floats. Moreover, dimensionnal analysis wasn't concluant : I think the resulting unit is in N.s-2*, which mean nothing to me. 
