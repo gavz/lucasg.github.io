@@ -1,731 +1,0 @@
-Script started on lun. 29 sept. 2014 00:49:16 CEST
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m sudo zpty[K[K[K[Kapt-getoin[K[K[K install auc[Ktoconf
-[sudo] password for lucas: 
-Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
-Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
-Reading state information... 0%Reading state information... 0%Reading state information... Done
-autoconf is already the newest version.
-autoconf set to manually installed.
-0 upgraded, 0 newly installed, 0 to remove and 40 not upgraded.
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m sudo apt-get install autoconf[K[K[K[K[K[K[K[Klibtool
-Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
-Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
-Reading state information... 0%Reading state information... 0%Reading state information... Done
-Suggested packages:
-  libtool-doc gfortran fortran95-compiler gcj-jdk
-Recommended packages:
-  libltdl-dev
-The following NEW packages will be installed:
-  libtool
-0 upgraded, 1 newly installed, 0 to remove and 40 not upgraded.
-Need to get 188 kB of archives.
-After this operation, 1 460 kB of additional disk space will be used.
-0% [Working]            0% [Waiting for headers]                        Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main libtool amd64 2.4.2-1.7ubuntu1 [188 kB]
-                        5% [1 libtool 9 883 B/188 kB 5%]                                27% [1 libtool 50,4 kB/188 kB 27%]O                                  100% [Working]              Fetched 188 kB in 1s (138 kB/s)
-Selecting previously unselected package libtool.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 147992 files and directories currently installed.)
-Preparing to unpack .../libtool_2.4.2-1.7ubuntu1_amd64.deb ...
-Unpacking libtool (2.4.2-1.7ubuntu1) ...
-Processing triggers for man-db (2.6.7.1-1) ...
-Setting up libtool (2.4.2-1.7ubuntu1) ...
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m sudo apt-get install libtoolautoconf-archive
-Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
-Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
-Reading state information... 0%Reading state information... 0%Reading state information... Done
-The following NEW packages will be installed:
-  autoconf-archive
-0 upgraded, 1 newly installed, 0 to remove and 40 not upgraded.
-Need to get 710 kB of archives.
-After this operation, 5 263 kB of additional disk space will be used.
-0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu/ trusty/universe autoconf-archive all 20131101-1 [710 kB]
-            0% [1 autoconf-archive 0 B/710 kB 0%]                                     28% [1 autoconf-archive 200 kB/710 kB 28%]67% [1 autoconf-archive 475 kB/710 kB 67%]                                          100% [Working]              Fetched 710 kB in 1s (430 kB/s)
-Selecting previously unselected package autoconf-archive.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 148020 files and directories currently installed.)
-Preparing to unpack .../autoconf-archive_20131101-1_all.deb ...
-Unpacking autoconf-archive (20131101-1) ...
-Processing triggers for doc-base (0.10.5) ...
-Processing 1 added doc-base file...
-Registering documents with scrollkeeper...
-Processing triggers for install-info (5.2.0.dfsg.1-2) ...
-Setting up autoconf-archive (20131101-1) ...
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m ../inkscape/configure 
-checking build system type... x86_64-unknown-linux-gnu
-checking host system type... x86_64-unknown-linux-gnu
-checking for a BSD-compatible install... /usr/bin/install -c
-checking whether build environment is sane... yes
-checking for a thread-safe mkdir -p... /bin/mkdir -p
-checking for gawk... gawk
-checking whether make sets $(MAKE)... yes
-checking whether make supports nested variables... yes
-checking how to create a pax tar archive... gnutar
-checking for style of include used by make... GNU
-checking for gcc... gcc
-checking whether the C compiler works... yes
-checking for C compiler default output file name... a.out
-checking for suffix of executables... 
-checking whether we are cross compiling... no
-checking for suffix of object files... o
-checking whether we are using the GNU C compiler... yes
-checking whether gcc accepts -g... yes
-checking for gcc option to accept ISO C89... none needed
-checking whether gcc understands -c and -o together... yes
-checking dependency style of gcc... gcc3
-checking for ar... ar
-checking the archiver (ar) interface... ar
-checking for g++... no
-checking for c++... no
-checking for gpp... no
-checking for aCC... no
-checking for CC... no
-checking for cxx... no
-checking for cc++... no
-checking for cl.exe... no
-checking for FCC... no
-checking for KCC... no
-checking for RCC... no
-checking for xlC_r... no
-checking for xlC... no
-checking whether we are using the GNU C++ compiler... no
-checking whether g++ accepts -g... no
-checking dependency style of g++... none
-checking for gcc... (cached) gcc
-checking whether we are using the GNU C compiler... (cached) yes
-checking whether gcc accepts -g... (cached) yes
-checking for gcc option to accept ISO C89... (cached) none needed
-checking whether gcc understands -c and -o together... (cached) yes
-checking dependency style of gcc... (cached) gcc3
-checking dependency style of gcc... gcc3
-../inkscape/configure: line 5967: syntax error near unexpected token `2.2'
-../inkscape/configure: line 5967: `LT_PREREQ(2.2)'
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m ../inkscape/autogen.sh 
-Copying file po/Makefile.in.in
-autoreconf: Entering directory `.'
-autoreconf: running: intltoolize --automake --copy --force
-autoreconf: running: aclocal --force -I m4 ${ACLOCAL_FLAGS}
-autoreconf: configure.ac: tracing
-autoreconf: running: libtoolize --copy --force
-libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, `build-aux'.
-libtoolize: copying file `build-aux/ltmain.sh'
-libtoolize: putting macros in AC_CONFIG_MACRO_DIR, `m4'.
-libtoolize: copying file `m4/libtool.m4'
-libtoolize: copying file `m4/ltoptions.m4'
-libtoolize: copying file `m4/ltsugar.m4'
-libtoolize: copying file `m4/ltversion.m4'
-libtoolize: copying file `m4/lt~obsolete.m4'
-autoreconf: running: /usr/bin/autoconf --force
-autoreconf: running: /usr/bin/autoheader --force
-autoreconf: running: automake --add-missing --copy --force-missing
-configure.ac:217: warning: The 'AM_PROG_MKDIR_P' macro is deprecated, and its use is discouraged.
-configure.ac:217: You should use the Autoconf-provided 'AC_PROG_MKDIR_P' macro instead,
-configure.ac:217: and use '$(MKDIR_P)' instead of '$(mkdir_p)'in your Makefile.am files.
-share/extensions/Makefile.am:16: warning: wildcard $(srcdir: non-POSIX variable name
-share/extensions/Makefile.am:16: (probably a GNU make extension)
-share/extensions/Makefile.am:32: warning: wildcard $(srcdir: non-POSIX variable name
-share/extensions/Makefile.am:32: (probably a GNU make extension)
-share/palettes/Makefile.am:34: warning: foreach i,$(palettes_i18n: non-POSIX variable name
-share/palettes/Makefile.am:34: (probably a GNU make extension)
-share/symbols/Makefile.am:5: warning: wildcard $(srcdir: non-POSIX variable name
-share/symbols/Makefile.am:5: (probably a GNU make extension)
-share/symbols/Makefile.am:10: warning: wildcard $(srcdir: non-POSIX variable name
-share/symbols/Makefile.am:10: (probably a GNU make extension)
-share/templates/Makefile.am:115: warning: foreach i,$(templates_i18n: non-POSIX variable name
-share/templates/Makefile.am:115: (probably a GNU make extension)
-autoreconf: Leaving directory `.'
-
-Done!  Please run './configure' now.
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m ../inkscape/autogen.sh [1Pconfigure[C
-checking build system type... x86_64-unknown-linux-gnu
-checking host system type... x86_64-unknown-linux-gnu
-checking for a BSD-compatible install... /usr/bin/install -c
-checking whether build environment is sane... yes
-checking for a thread-safe mkdir -p... /bin/mkdir -p
-checking for gawk... gawk
-checking whether make sets $(MAKE)... yes
-checking whether make supports nested variables... yes
-checking how to create a pax tar archive... gnutar
-checking for style of include used by make... GNU
-checking for gcc... gcc
-checking whether the C compiler works... yes
-checking for C compiler default output file name... a.out
-checking for suffix of executables... 
-checking whether we are cross compiling... no
-checking for suffix of object files... o
-checking whether we are using the GNU C compiler... yes
-checking whether gcc accepts -g... yes
-checking for gcc option to accept ISO C89... none needed
-checking whether gcc understands -c and -o together... yes
-checking dependency style of gcc... gcc3
-checking for ar... ar
-checking the archiver (ar) interface... ar
-checking for g++... no
-checking for c++... no
-checking for gpp... no
-checking for aCC... no
-checking for CC... no
-checking for cxx... no
-checking for cc++... no
-checking for cl.exe... no
-checking for FCC... no
-checking for KCC... no
-checking for RCC... no
-checking for xlC_r... no
-checking for xlC... no
-checking whether we are using the GNU C++ compiler... no
-checking whether g++ accepts -g... no
-checking dependency style of g++... none
-checking for gcc... (cached) gcc
-checking whether we are using the GNU C compiler... (cached) yes
-checking whether gcc accepts -g... (cached) yes
-checking for gcc option to accept ISO C89... (cached) none needed
-checking whether gcc understands -c and -o together... (cached) yes
-checking dependency style of gcc... (cached) gcc3
-checking dependency style of gcc... gcc3
-checking how to print strings... printf
-checking for a sed that does not truncate output... /bin/sed
-checking for grep that handles long lines and -e... /bin/grep
-checking for egrep... /bin/grep -E
-checking for fgrep... /bin/grep -F
-checking for ld used by gcc... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
-checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
-checking the name lister (/usr/bin/nm -B) interface... BSD nm
-checking whether ln -s works... yes
-checking the maximum length of command line arguments... 1572864
-checking whether the shell understands some XSI constructs... yes
-checking whether the shell understands "+="... yes
-checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
-checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
-checking for /usr/bin/ld option to reload object files... -r
-checking for objdump... objdump
-checking how to recognize dependent libraries... pass_all
-checking for dlltool... no
-checking how to associate runtime and link libraries... printf %s\n
-checking for archiver @FILE support... no
-checking for strip... strip
-checking for ranlib... ranlib
-checking command to parse /usr/bin/nm -B output from gcc object... failed
-checking for sysroot... no
-checking for mt... mt
-checking if mt is a manifest tool... no
-checking how to run the C preprocessor... gcc -E
-checking for ANSI C header files... yes
-checking for sys/types.h... yes
-checking for sys/stat.h... yes
-checking for stdlib.h... yes
-checking for string.h... yes
-checking for memory.h... yes
-checking for strings.h... yes
-checking for inttypes.h... yes
-checking for stdint.h... yes
-checking for unistd.h... yes
-checking for dlfcn.h... yes
-checking for objdir... .libs
-checking if gcc supports -fno-rtti -fno-exceptions... no
-checking for gcc option to produce PIC... -fPIC -DPIC
-checking if gcc PIC flag -fPIC -DPIC works... yes
-checking if gcc static flag -static works... yes
-checking if gcc supports -c -o file.o... yes
-checking if gcc supports -c -o file.o... (cached) yes
-checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
-checking whether -lc should be explicitly linked in... no
-checking dynamic linker characteristics... GNU/Linux ld.so
-checking how to hardcode library paths into programs... immediate
-checking whether stripping libraries is possible... yes
-checking if libtool supports shared libraries... yes
-checking whether to build shared libraries... yes
-checking whether to build static libraries... yes
-checking for ANSI C header files... (cached) yes
-checking for BZR snapshot build... yes
-checking whether make supports nested variables... (cached) yes
-Strict build options enabled
-checking compiler support for -Werror=...... yes
-checking compiler support for -Wno-pointer-sign... yes
-checking compiler support for -Wno-unused-but-set-variable... yes
-checking linker tolerates -z relro... yes
-checking native support for unordered_set... not working
-checking TR1 unordered_set usability... not working
-checking boost/unordered_set.hpp usability... no
-checking boost/unordered_set.hpp presence... no
-checking for boost/unordered_set.hpp... no
-checking for overzealous strict aliasing warnings... yes
-checking whether NLS is requested... yes
-checking for intltool >= 0.40.0... 0.50.2 found
-checking for intltool-update... /usr/bin/intltool-update
-checking for intltool-merge... /usr/bin/intltool-merge
-checking for intltool-extract... /usr/bin/intltool-extract
-checking for xgettext... /usr/bin/xgettext
-checking for msgmerge... /usr/bin/msgmerge
-checking for msgfmt... /usr/bin/msgfmt
-checking for gmsgfmt... /usr/bin/msgfmt
-checking for perl... /usr/bin/perl
-checking for perl >= 5.8.1... 5.18.2
-checking for XML::Parser... ok
-checking for msgfmt... (cached) /usr/bin/msgfmt
-checking for gmsgfmt... (cached) /usr/bin/msgfmt
-checking for xgettext... (cached) /usr/bin/xgettext
-checking for msgmerge... (cached) /usr/bin/msgmerge
-checking for ld used by GCC... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
-checking for shared library run path origin... done
-checking for CFPreferencesCopyAppValue... no
-checking for CFLocaleCopyCurrent... no
-checking for GNU gettext in libc... no
-checking for iconv... no, consider installing GNU libiconv
-checking for GNU gettext in libintl... no
-checking whether to use NLS... no
-checking for pkg-config... /usr/bin/pkg-config
-checking for msgfmt... (cached) /usr/bin/msgfmt
-checking for gmsgfmt... (cached) /usr/bin/msgfmt
-checking for g++ option to support OpenMP... unsupported
-checking pkg-config is at least version 0.9.0... yes
-checking for EXIF... no
-checking for jpeg_CreateDecompress in -ljpeg... no
-checking sys/filio.h usability... no
-checking sys/filio.h presence... no
-checking for sys/filio.h... no
-checking malloc.h usability... no
-checking malloc.h presence... no
-checking for malloc.h... no
-checking for mallinfo... no
-checking for freetype-config... no
-configure: error: Cannot find freetype-config
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m sudo apt-get install libfreetype6-dev
-Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
-Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
-Reading state information... 0%Reading state information... 0%Reading state information... Done
-The following extra packages will be installed:
-  libpng12-dev zlib1g-dev
-The following NEW packages will be installed:
-  libfreetype6-dev libpng12-dev zlib1g-dev
-0 upgraded, 3 newly installed, 0 to remove and 40 not upgraded.
-Need to get 1 012 kB of archives.
-After this operation, 4 724 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Y
-0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main zlib1g-dev amd64 1:1.2.8.dfsg-1ubuntu1 [183 kB]
-            0% [1 zlib1g-dev 0 B/183 kB 0%]                               18% [Working]             Get:2 http://archive.ubuntu.com/ubuntu/ trusty/main libpng12-dev amd64 1.2.50-1ubuntu2 [206 kB]
-             18% [2 libpng12-dev 0 B/206 kB 0%]                                  38% [Working]             Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libfreetype6-dev amd64 2.5.2-1ubuntu2.2 [623 kB]
-             38% [3 libfreetype6-dev 0 B/623 kB 0%]                                      69% [3 libfreetype6-dev 314 kB/623 kB 50%]                                          100% [Working]              Fetched 1 012 kB in 1s (552 kB/s)
-Selecting previously unselected package zlib1g-dev:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 149046 files and directories currently installed.)
-Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-1ubuntu1_amd64.deb ...
-Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-1ubuntu1) ...
-Selecting previously unselected package libpng12-dev.
-Preparing to unpack .../libpng12-dev_1.2.50-1ubuntu2_amd64.deb ...
-Unpacking libpng12-dev (1.2.50-1ubuntu2) ...
-Selecting previously unselected package libfreetype6-dev.
-Preparing to unpack .../libfreetype6-dev_2.5.2-1ubuntu2.2_amd64.deb ...
-Unpacking libfreetype6-dev (2.5.2-1ubuntu2.2) ...
-Processing triggers for man-db (2.6.7.1-1) ...
-Processing triggers for doc-base (0.10.5) ...
-Processing 1 added doc-base file...
-Registering documents with scrollkeeper...
-Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-1ubuntu1) ...
-Setting up libpng12-dev (1.2.50-1ubuntu2) ...
-Setting up libfreetype6-dev (2.5.2-1ubuntu2.2) ...
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m sudo apt-get install libfreetype6-dev[15P../inkscape/configure 
-checking build system type... x86_64-unknown-linux-gnu
-checking host system type... x86_64-unknown-linux-gnu
-checking for a BSD-compatible install... /usr/bin/install -c
-checking whether build environment is sane... yes
-checking for a thread-safe mkdir -p... /bin/mkdir -p
-checking for gawk... gawk
-checking whether make sets $(MAKE)... yes
-checking whether make supports nested variables... yes
-checking how to create a pax tar archive... gnutar
-checking for style of include used by make... GNU
-checking for gcc... gcc
-checking whether the C compiler works... yes
-checking for C compiler default output file name... a.out
-checking for suffix of executables... 
-checking whether we are cross compiling... no
-checking for suffix of object files... o
-checking whether we are using the GNU C compiler... yes
-checking whether gcc accepts -g... yes
-checking for gcc option to accept ISO C89... none needed
-checking whether gcc understands -c and -o together... yes
-checking dependency style of gcc... gcc3
-checking for ar... ar
-checking the archiver (ar) interface... ar
-checking for g++... no
-checking for c++... no
-checking for gpp... no
-checking for aCC... no
-checking for CC... no
-checking for cxx... no
-checking for cc++... no
-checking for cl.exe... no
-checking for FCC... no
-checking for KCC... no
-checking for RCC... no
-checking for xlC_r... no
-checking for xlC... no
-checking whether we are using the GNU C++ compiler... no
-checking whether g++ accepts -g... no
-checking dependency style of g++... none
-checking for gcc... (cached) gcc
-checking whether we are using the GNU C compiler... (cached) yes
-checking whether gcc accepts -g... (cached) yes
-checking for gcc option to accept ISO C89... (cached) none needed
-checking whether gcc understands -c and -o together... (cached) yes
-checking dependency style of gcc... (cached) gcc3
-checking dependency style of gcc... gcc3
-checking how to print strings... printf
-checking for a sed that does not truncate output... /bin/sed
-checking for grep that handles long lines and -e... /bin/grep
-checking for egrep... /bin/grep -E
-checking for fgrep... /bin/grep -F
-checking for ld used by gcc... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
-checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
-checking the name lister (/usr/bin/nm -B) interface... BSD nm
-checking whether ln -s works... yes
-checking the maximum length of command line arguments... 1572864
-checking whether the shell understands some XSI constructs... yes
-checking whether the shell understands "+="... yes
-checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
-checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
-checking for /usr/bin/ld option to reload object files... -r
-checking for objdump... objdump
-checking how to recognize dependent libraries... pass_all
-checking for dlltool... no
-checking how to associate runtime and link libraries... printf %s\n
-checking for archiver @FILE support... no
-checking for strip... strip
-checking for ranlib... ranlib
-checking command to parse /usr/bin/nm -B output from gcc object... failed
-checking for sysroot... no
-checking for mt... mt
-checking if mt is a manifest tool... no
-checking how to run the C preprocessor... gcc -E
-checking for ANSI C header files... yes
-checking for sys/types.h... yes
-checking for sys/stat.h... yes
-checking for stdlib.h... yes
-checking for string.h... yes
-checking for memory.h... yes
-checking for strings.h... yes
-checking for inttypes.h... yes
-checking for stdint.h... yes
-checking for unistd.h... yes
-checking for dlfcn.h... yes
-checking for objdir... .libs
-checking if gcc supports -fno-rtti -fno-exceptions... no
-checking for gcc option to produce PIC... -fPIC -DPIC
-checking if gcc PIC flag -fPIC -DPIC works... yes
-checking if gcc static flag -static works... yes
-checking if gcc supports -c -o file.o... yes
-checking if gcc supports -c -o file.o... (cached) yes
-checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
-checking whether -lc should be explicitly linked in... no
-checking dynamic linker characteristics... GNU/Linux ld.so
-checking how to hardcode library paths into programs... immediate
-checking whether stripping libraries is possible... yes
-checking if libtool supports shared libraries... yes
-checking whether to build shared libraries... yes
-checking whether to build static libraries... yes
-checking for ANSI C header files... (cached) yes
-checking for BZR snapshot build... yes
-checking whether make supports nested variables... (cached) yes
-Strict build options enabled
-checking compiler support for -Werror=...... yes
-checking compiler support for -Wno-pointer-sign... yes
-checking compiler support for -Wno-unused-but-set-variable... yes
-checking linker tolerates -z relro... yes
-checking native support for unordered_set... not working
-checking TR1 unordered_set usability... not working
-checking boost/unordered_set.hpp usability... no
-checking boost/unordered_set.hpp presence... no
-checking for boost/unordered_set.hpp... no
-checking for overzealous strict aliasing warnings... yes
-checking whether NLS is requested... yes
-checking for intltool >= 0.40.0... 0.50.2 found
-checking for intltool-update... /usr/bin/intltool-update
-checking for intltool-merge... /usr/bin/intltool-merge
-checking for intltool-extract... /usr/bin/intltool-extract
-checking for xgettext... /usr/bin/xgettext
-checking for msgmerge... /usr/bin/msgmerge
-checking for msgfmt... /usr/bin/msgfmt
-checking for gmsgfmt... /usr/bin/msgfmt
-checking for perl... /usr/bin/perl
-checking for perl >= 5.8.1... 5.18.2
-checking for XML::Parser... ok
-checking for msgfmt... (cached) /usr/bin/msgfmt
-checking for gmsgfmt... (cached) /usr/bin/msgfmt
-checking for xgettext... (cached) /usr/bin/xgettext
-checking for msgmerge... (cached) /usr/bin/msgmerge
-checking for ld used by GCC... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
-checking for shared library run path origin... done
-checking for CFPreferencesCopyAppValue... no
-checking for CFLocaleCopyCurrent... no
-checking for GNU gettext in libc... no
-checking for iconv... no, consider installing GNU libiconv
-checking for GNU gettext in libintl... no
-checking whether to use NLS... no
-checking for pkg-config... /usr/bin/pkg-config
-checking for msgfmt... (cached) /usr/bin/msgfmt
-checking for gmsgfmt... (cached) /usr/bin/msgfmt
-checking for g++ option to support OpenMP... unsupported
-checking pkg-config is at least version 0.9.0... yes
-checking for EXIF... no
-checking for jpeg_CreateDecompress in -ljpeg... no
-checking sys/filio.h usability... no
-checking sys/filio.h presence... no
-checking for sys/filio.h... no
-checking malloc.h usability... no
-checking malloc.h presence... no
-checking for malloc.h... no
-checking for mallinfo... no
-checking for freetype-config... /usr/bin/freetype-config
-checking for Win32 platform... no
-checking for OSX platform... no
-checking for Solaris platform... no
-checking for GNOME_VFS... no
-no
-checking whether byte ordering is bigendian... yes
-checking zlib.h usability... no
-checking zlib.h presence... no
-checking for zlib.h... no
-checking for LCMS2... no
-checking for LCMS... no
-configure: error: --enable-lcms was specified, but appropriate LittleCms development packages could not be found
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m sudo apt*[K-get install liblc
-liblcas0                   liblcmaps-without-gsi-dev
-liblcas-dev                liblcms1
-liblcgdm1                  liblcms1-dev
-liblcgdm-dev               liblcms2-2
-liblchown-perl             liblcms2-dev
-liblcmaps0                 liblcms2-utils
-liblcmaps-dev              liblcms-utils
-liblcmaps-without-gsi0     
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m sudo apt-get install liblcms4[K2-dev 
-Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
-Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
-Reading state information... 0%Reading state information... 0%Reading state information... Done
-The following NEW packages will be installed:
-  liblcms2-dev
-0 upgraded, 1 newly installed, 0 to remove and 40 not upgraded.
-Need to get 5 097 kB of archives.
-After this operation, 5 285 kB of additional disk space will be used.
-0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main liblcms2-dev amd64 2.5-0ubuntu4 [5 097 kB]
-            0% [1 liblcms2-dev 0 B/5 097 kB 0%]                                   6% [1 liblcms2-dev 289 kB/5 097 kB 6%]                                      11% [1 liblcms2-dev 580 kB/5 097 kB 11%]17% [1 liblcms2-dev 882 kB/5 097 kB 17%]                                        23% [1 liblcms2-dev 1 180 kB/5 097 kB 23%]29% [1 liblcms2-dev 1 485 kB/5 097 kB 29%]35% [1 liblcms2-dev 1 775 kB/5 097 kB 35%]41% [1 liblcms2-dev 2 081 kB/5 097 kB 41%]47% [1 liblcms2-dev 2 387 kB/5 097 kB 47%]53% [1 liblcms2-dev 2 690 kB/5 097 kB 53%]59% [1 liblcms2-dev 3 000 kB/5 097 kB 59%]64% [1 liblcms2-dev 3 262 kB/5 097 kB 64%]                                          68% [1 liblcms2-dev 3 482 kB/5 097 kB 68%]                          569 kB/s 2s74% [1 liblcms2-dev 3 762 kB/5 097 kB 74%]                          569 kB/s 2s80% [1 liblcms2-dev 4 070 kB/5 097 kB 80%]                          569 kB/s 1s86% [1 liblcms2-dev 4 377 kB/5 097 kB 86%]                          569 kB/s 1s91% [1 liblcms2-dev 4 659 kB/5 097 kB 91%]                          569 kB/s 0s97% [1 liblcms2-dev 4 969 kB/5 097 kB 97%]                          569 kB/s 0s100% [Working]                                                      569 kB/s 0s                                                                               Fetched 5 097 kB in 8s (577 kB/s)
-Selecting previously unselected package liblcms2-dev:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 149265 files and directories currently installed.)
-Preparing to unpack .../liblcms2-dev_2.5-0ubuntu4_amd64.deb ...
-Unpacking liblcms2-dev:amd64 (2.5-0ubuntu4) ...
-Setting up liblcms2-dev:amd64 (2.5-0ubuntu4) ...
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m sudo apt-get install liblcms2-dev [12P../inkscape/configure[C
-checking build system type... x86_64-unknown-linux-gnu
-checking host system type... x86_64-unknown-linux-gnu
-checking for a BSD-compatible install... /usr/bin/install -c
-checking whether build environment is sane... yes
-checking for a thread-safe mkdir -p... /bin/mkdir -p
-checking for gawk... gawk
-checking whether make sets $(MAKE)... yes
-checking whether make supports nested variables... yes
-checking how to create a pax tar archive... gnutar
-checking for style of include used by make... GNU
-checking for gcc... gcc
-checking whether the C compiler works... yes
-checking for C compiler default output file name... a.out
-checking for suffix of executables... 
-checking whether we are cross compiling... no
-checking for suffix of object files... o
-checking whether we are using the GNU C compiler... yes
-checking whether gcc accepts -g... yes
-checking for gcc option to accept ISO C89... none needed
-checking whether gcc understands -c and -o together... yes
-checking dependency style of gcc... gcc3
-checking for ar... ar
-checking the archiver (ar) interface... ar
-checking for g++... no
-checking for c++... no
-checking for gpp... no
-checking for aCC... no
-checking for CC... no
-checking for cxx... no
-checking for cc++... no
-checking for cl.exe... no
-checking for FCC... no
-checking for KCC... no
-checking for RCC... no
-checking for xlC_r... no
-checking for xlC... no
-checking whether we are using the GNU C++ compiler... no
-checking whether g++ accepts -g... no
-checking dependency style of g++... none
-checking for gcc... (cached) gcc
-checking whether we are using the GNU C compiler... (cached) yes
-checking whether gcc accepts -g... (cached) yes
-checking for gcc option to accept ISO C89... (cached) none needed
-checking whether gcc understands -c and -o together... (cached) yes
-checking dependency style of gcc... (cached) gcc3
-checking dependency style of gcc... gcc3
-checking how to print strings... printf
-checking for a sed that does not truncate output... /bin/sed
-checking for grep that handles long lines and -e... /bin/grep
-checking for egrep... /bin/grep -E
-checking for fgrep... /bin/grep -F
-checking for ld used by gcc... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
-checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
-checking the name lister (/usr/bin/nm -B) interface... BSD nm
-checking whether ln -s works... yes
-checking the maximum length of command line arguments... 1572864
-checking whether the shell understands some XSI constructs... yes
-checking whether the shell understands "+="... yes
-checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
-checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
-checking for /usr/bin/ld option to reload object files... -r
-checking for objdump... objdump
-checking how to recognize dependent libraries... pass_all
-checking for dlltool... no
-checking how to associate runtime and link libraries... printf %s\n
-checking for archiver @FILE support... no
-checking for strip... strip
-checking for ranlib... ranlib
-checking command to parse /usr/bin/nm -B output from gcc object... failed
-checking for sysroot... no
-checking for mt... mt
-checking if mt is a manifest tool... no
-checking how to run the C preprocessor... gcc -E
-checking for ANSI C header files... yes
-checking for sys/types.h... yes
-checking for sys/stat.h... yes
-checking for stdlib.h... yes
-checking for string.h... yes
-checking for memory.h... yes
-checking for strings.h... yes
-checking for inttypes.h... yes
-checking for stdint.h... yes
-checking for unistd.h... yes
-checking for dlfcn.h... yes
-checking for objdir... .libs
-checking if gcc supports -fno-rtti -fno-exceptions... no
-checking for gcc option to produce PIC... -fPIC -DPIC
-checking if gcc PIC flag -fPIC -DPIC works... yes
-checking if gcc static flag -static works... yes
-checking if gcc supports -c -o file.o... yes
-checking if gcc supports -c -o file.o... (cached) yes
-checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
-checking whether -lc should be explicitly linked in... no
-checking dynamic linker characteristics... GNU/Linux ld.so
-checking how to hardcode library paths into programs... immediate
-checking whether stripping libraries is possible... yes
-checking if libtool supports shared libraries... yes
-checking whether to build shared libraries... yes
-checking whether to build static libraries... yes
-checking for ANSI C header files... (cached) yes
-checking for BZR snapshot build... yes
-checking whether make supports nested variables... (cached) yes
-Strict build options enabled
-checking compiler support for -Werror=...... yes
-checking compiler support for -Wno-pointer-sign... yes
-checking compiler support for -Wno-unused-but-set-variable... yes
-checking linker tolerates -z relro... yes
-checking native support for unordered_set... not working
-checking TR1 unordered_set usability... not working
-checking boost/unordered_set.hpp usability... no
-checking boost/unordered_set.hpp presence... no
-checking for boost/unordered_set.hpp... no
-checking for overzealous strict aliasing warnings... yes
-checking whether NLS is requested... yes
-checking for intltool >= 0.40.0... 0.50.2 found
-checking for intltool-update... /usr/bin/intltool-update
-checking for intltool-merge... /usr/bin/intltool-merge
-checking for intltool-extract... /usr/bin/intltool-extract
-checking for xgettext... /usr/bin/xgettext
-checking for msgmerge... /usr/bin/msgmerge
-checking for msgfmt... /usr/bin/msgfmt
-checking for gmsgfmt... /usr/bin/msgfmt
-checking for perl... /usr/bin/perl
-checking for perl >= 5.8.1... 5.18.2
-checking for XML::Parser... ok
-checking for msgfmt... (cached) /usr/bin/msgfmt
-checking for gmsgfmt... (cached) /usr/bin/msgfmt
-checking for xgettext... (cached) /usr/bin/xgettext
-checking for msgmerge... (cached) /usr/bin/msgmerge
-checking for ld used by GCC... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
-checking for shared library run path origin... done
-checking for CFPreferencesCopyAppValue... no
-checking for CFLocaleCopyCurrent... no
-checking for GNU gettext in libc... no
-checking for iconv... no, consider installing GNU libiconv
-checking for GNU gettext in libintl... no
-checking whether to use NLS... no
-checking for pkg-config... /usr/bin/pkg-config
-checking for msgfmt... (cached) /usr/bin/msgfmt
-checking for gmsgfmt... (cached) /usr/bin/msgfmt
-checking for g++ option to support OpenMP... unsupported
-checking pkg-config is at least version 0.9.0... yes
-checking for EXIF... no
-checking for jpeg_CreateDecompress in -ljpeg... no
-checking sys/filio.h usability... no
-checking sys/filio.h presence... no
-checking for sys/filio.h... no
-checking malloc.h usability... no
-checking malloc.h presence... no
-checking for malloc.h... no
-checking for mallinfo... no
-checking for freetype-config... /usr/bin/freetype-config
-checking for Win32 platform... no
-checking for OSX platform... no
-checking for Solaris platform... no
-checking for GNOME_VFS... no
-no
-checking whether byte ordering is bigendian... yes
-checking zlib.h usability... no
-checking zlib.h presence... no
-checking for zlib.h... no
-checking for LCMS2... yes
-checking for POPPLER... no
-checking for POPPLER_GFXFONT... no
-checking for POPPLER_NEWERRORAPI... no
-checking for new color space API in Poppler... no
-checking for POPPLER_EVEN_NEWER_COLOR_SPACE_API... no
-checking whether GfxPatch in Poppler no longer uses GfxColor... no
-checking for LIBWPG01... no
-checking for LIBWPG02... no
-checking for LIBVISIO... no
-checking for LIBCDR... no
-checking for IMAGEMAGICK... no
-checking for INKSCAPE... no
-configure: error: Package requirements (bdw-gc      >= 7.1
-		  cairo       >= 1.10
-		  cairomm-1.0 >= 1.9.8
-		  glib-2.0    >= 2.28
-		  glibmm-2.4  >= 2.28
-		  giomm-2.4
-		  gsl
-		  gthread-2.0 >= 2.0
-		  libpng      >= 1.2
-		  libxml-2.0  >= 2.6.11
-		  libxslt     >= 1.0.15
-		  pango       >= 1.24
-		  pangoft2    >= 1.24
-		  sigc++-2.0  >= 2.0.12
-		  ) were not met:
-
-No package 'bdw-gc' found
-No package 'cairo' found
-No package 'cairomm-1.0' found
-No package 'glib-2.0' found
-No package 'glibmm-2.4' found
-No package 'giomm-2.4' found
-No package 'gsl' found
-No package 'gthread-2.0' found
-No package 'libxml-2.0' found
-No package 'libxslt' found
-No package 'pango' found
-No package 'pangoft2' found
-No package 'sigc++-2.0' found
-
-Consider adjusting the PKG_CONFIG_PATH environment variable if you
-installed software in a non-standard prefix.
-
-Alternatively, you may set the environment variables INKSCAPE_CFLAGS
-and INKSCAPE_LIBS to avoid the need to call pkg-config.
-See the pkg-config man page for more details.
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m exit
-Script done on lun. 29 sept. 2014 00:54:11 CEST

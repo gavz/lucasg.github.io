@@ -1,163 +1,0 @@
-Script started on dim. 28 sept. 2014 23:32:09 CEST
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m sudo apt-get inal[K[Kstall automalke[K[K[Kke
-[sudo] password for lucas: 
-Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
-Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 1%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
-Reading state information... 0%Reading state information... 0%Reading state information... Done
-The following extra packages will be installed:
-  autoconf autotools-dev m4
-Suggested packages:
-  autoconf2.13 autoconf-archive gnu-standards autoconf-doc libtool
-The following NEW packages will be installed:
-  autoconf automake autotools-dev m4
-0 upgraded, 4 newly installed, 0 to remove and 40 not upgraded.
-Need to get 1 072 kB of archives.
-After this operation, 3 995 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Y
-0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main m4 amd64 1.4.17-2ubuntu1 [195 kB]
-            0% [1 m4 0 B/195 kB 0%]                       18% [Working]             Get:2 http://archive.ubuntu.com/ubuntu/ trusty/main autoconf all 2.69-6 [322 kB]
-             18% [2 autoconf 0 B/322 kB 0%]                              47% [2 autoconf 314 kB/322 kB 97%]                                  48% [Working]             Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main autotools-dev all 20130810.1 [44,3 kB]
-             48% [3 autotools-dev 0 B/44,3 kB 0%]                                    52% [Working]             Get:4 http://archive.ubuntu.com/ubuntu/ trusty/main automake all 1:1.14.1-2ubuntu1 [510 kB]
-             52% [4 automake 0 B/510 kB 0%]                              82% [4 automake 314 kB/510 kB 62%]                                  100% [Working]              Fetched 1 072 kB in 2s (483 kB/s)
-Selecting previously unselected package m4.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 146894 files and directories currently installed.)
-Preparing to unpack .../m4_1.4.17-2ubuntu1_amd64.deb ...
-Unpacking m4 (1.4.17-2ubuntu1) ...
-Selecting previously unselected package autoconf.
-Preparing to unpack .../autoconf_2.69-6_all.deb ...
-Unpacking autoconf (2.69-6) ...
-Selecting previously unselected package autotools-dev.
-Preparing to unpack .../autotools-dev_20130810.1_all.deb ...
-Unpacking autotools-dev (20130810.1) ...
-Selecting previously unselected package automake.
-Preparing to unpack .../automake_1%3a1.14.1-2ubuntu1_all.deb ...
-Unpacking automake (1:1.14.1-2ubuntu1) ...
-Processing triggers for man-db (2.6.7.1-1) ...
-Processing triggers for install-info (5.2.0.dfsg.1-2) ...
-Processing triggers for doc-base (0.10.5) ...
-Processing 1 added doc-base file...
-Registering documents with scrollkeeper...
-Setting up m4 (1.4.17-2ubuntu1) ...
-Setting up autoconf (2.69-6) ...
-Setting up autotools-dev (20130810.1) ...
-Setting up automake (1:1.14.1-2ubuntu1) ...
-update-alternatives: using /usr/bin/automake-1.14 to provide /usr/bin/automake (automake) in auto mode
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m ./autogend[K.sh
-*** No intltoolize found, please install the intltool package ***
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m ./autogen.shsudo apt-get install automake[K[K[K[K[K[K[K[Kintltool
-Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
-Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
-Reading state information... 0%Reading state information... 0%Reading state information... Done
-The following extra packages will be installed:
-  libencode-locale-perl libfile-listing-perl libhtml-parser-perl
-  libhtml-tagset-perl libhtml-tree-perl libhttp-cookies-perl libhttp-date-perl
-  libhttp-message-perl libhttp-negotiate-perl libio-html-perl
-  liblwp-mediatypes-perl liblwp-protocol-https-perl libnet-http-perl
-  libwww-perl libwww-robotrules-perl libxml-parser-perl
-Suggested packages:
-  libdata-dump-perl libcrypt-ssleay-perl libauthen-ntlm-perl
-Recommended packages:
-  libhtml-format-perl libhtml-form-perl libhttp-daemon-perl
-The following NEW packages will be installed:
-  intltool libencode-locale-perl libfile-listing-perl libhtml-parser-perl
-  libhtml-tagset-perl libhtml-tree-perl libhttp-cookies-perl libhttp-date-perl
-  libhttp-message-perl libhttp-negotiate-perl libio-html-perl
-  liblwp-mediatypes-perl liblwp-protocol-https-perl libnet-http-perl
-  libwww-perl libwww-robotrules-perl libxml-parser-perl
-0 upgraded, 17 newly installed, 0 to remove and 40 not upgraded.
-Need to get 1 050 kB of archives.
-After this operation, 3 034 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Y
-0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main libencode-locale-perl all 1.03-1 [12,4 kB]
-            0% [1 libencode-locale-perl 0 B/12,4 kB 0%]                                           1% [Working]            Get:2 http://archive.ubuntu.com/ubuntu/ trusty/main libhttp-date-perl all 6.02-1 [10,4 kB]
-            1% [2 libhttp-date-perl 0 B/10,4 kB 0%]                                       2% [Working]            Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main libfile-listing-perl all 6.04-1 [9 774 B]
-            2% [3 libfile-listing-perl 0 B/9 774 B 0%]                                          3% [Working]            Get:4 http://archive.ubuntu.com/ubuntu/ trusty/main libhtml-tagset-perl all 3.20-2 [13,5 kB]
-            3% [4 libhtml-tagset-perl 0 B/13,5 kB 0%]                                         4% [Working]            Get:5 http://archive.ubuntu.com/ubuntu/ trusty/main libhtml-parser-perl amd64 3.71-1build1 [98,2 kB]
-            4% [5 libhtml-parser-perl 0 B/98,2 kB 0%]                                         14% [Working]             Get:6 http://archive.ubuntu.com/ubuntu/ trusty/main libhtml-tree-perl all 5.03-1 [215 kB]
-             14% [6 libhtml-tree-perl 0 B/215 kB 0%]                                       34% [Working]             Get:7 http://archive.ubuntu.com/ubuntu/ trusty/main libio-html-perl all 1.00-1 [15,7 kB]
-             34% [7 libio-html-perl 0 B/15,7 kB 0%]                                      36% [Working]             Get:8 http://archive.ubuntu.com/ubuntu/ trusty/main liblwp-mediatypes-perl all 6.02-1 [21,7 kB]
-             36% [8 liblwp-mediatypes-perl 0 B/21,7 kB 0%]                                             38% [Working]             Get:9 http://archive.ubuntu.com/ubuntu/ trusty/main libhttp-message-perl all 6.06-1 [78,7 kB]
-             38% [9 libhttp-message-perl 0 B/78,7 kB 0%]                                           45% [Working]             Get:10 http://archive.ubuntu.com/ubuntu/ trusty/main libhttp-cookies-perl all 6.00-2 [23,3 kB]
-             45% [10 libhttp-cookies-perl 0 B/23,3 kB 0%]                                            47% [Working]             Get:11 http://archive.ubuntu.com/ubuntu/ trusty/main libhttp-negotiate-perl all 6.00-2 [13,4 kB]
-             47% [11 libhttp-negotiate-perl 0 B/13,4 kB 0%]                                              49% [Working]             Get:12 http://archive.ubuntu.com/ubuntu/ trusty/main libnet-http-perl all 6.06-1 [24,2 kB]
-             49% [12 libnet-http-perl 0 B/24,2 kB 0%]                                        51% [Working]             Get:13 http://archive.ubuntu.com/ubuntu/ trusty-updates/main liblwp-protocol-https-perl all 6.04-2ubuntu0.1 [7 644 B]
-             51% [13 liblwp-protocol-https-perl 0 B/7 644 B 0%]                                                  52% [Working]             Get:14 http://archive.ubuntu.com/ubuntu/ trusty/main libwww-robotrules-perl all 6.01-1 [14,1 kB]
-             52% [14 libwww-robotrules-perl 0 B/14,1 kB 0%]                                              53% [Working]             Get:15 http://archive.ubuntu.com/ubuntu/ trusty/main libwww-perl all 6.05-2 [146 kB]
-             53% [15 libwww-perl 0 B/146 kB 0%]                                  67% [Working]             Get:16 http://archive.ubuntu.com/ubuntu/ trusty/main libxml-parser-perl amd64 2.41-1build3 [294 kB]
-             67% [16 libxml-parser-perl 0 B/294 kB 0%]                                         86% [16 libxml-parser-perl 197 kB/294 kB 67%]                                             95% [Working]             Get:17 http://archive.ubuntu.com/ubuntu/ trusty/main intltool all 0.50.2-2 [52,0 kB]
-             95% [17 intltool 0 B/52,0 kB 0%]                                100% [Working]              Fetched 1 050 kB in 4s (210 kB/s)
-Selecting previously unselected package libencode-locale-perl.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 147173 files and directories currently installed.)
-Preparing to unpack .../libencode-locale-perl_1.03-1_all.deb ...
-Unpacking libencode-locale-perl (1.03-1) ...
-Selecting previously unselected package libhttp-date-perl.
-Preparing to unpack .../libhttp-date-perl_6.02-1_all.deb ...
-Unpacking libhttp-date-perl (6.02-1) ...
-Selecting previously unselected package libfile-listing-perl.
-Preparing to unpack .../libfile-listing-perl_6.04-1_all.deb ...
-Unpacking libfile-listing-perl (6.04-1) ...
-Selecting previously unselected package libhtml-tagset-perl.
-Preparing to unpack .../libhtml-tagset-perl_3.20-2_all.deb ...
-Unpacking libhtml-tagset-perl (3.20-2) ...
-Selecting previously unselected package libhtml-parser-perl.
-Preparing to unpack .../libhtml-parser-perl_3.71-1build1_amd64.deb ...
-Unpacking libhtml-parser-perl (3.71-1build1) ...
-Selecting previously unselected package libhtml-tree-perl.
-Preparing to unpack .../libhtml-tree-perl_5.03-1_all.deb ...
-Unpacking libhtml-tree-perl (5.03-1) ...
-Selecting previously unselected package libio-html-perl.
-Preparing to unpack .../libio-html-perl_1.00-1_all.deb ...
-Unpacking libio-html-perl (1.00-1) ...
-Selecting previously unselected package liblwp-mediatypes-perl.
-Preparing to unpack .../liblwp-mediatypes-perl_6.02-1_all.deb ...
-Unpacking liblwp-mediatypes-perl (6.02-1) ...
-Selecting previously unselected package libhttp-message-perl.
-Preparing to unpack .../libhttp-message-perl_6.06-1_all.deb ...
-Unpacking libhttp-message-perl (6.06-1) ...
-Selecting previously unselected package libhttp-cookies-perl.
-Preparing to unpack .../libhttp-cookies-perl_6.00-2_all.deb ...
-Unpacking libhttp-cookies-perl (6.00-2) ...
-Selecting previously unselected package libhttp-negotiate-perl.
-Preparing to unpack .../libhttp-negotiate-perl_6.00-2_all.deb ...
-Unpacking libhttp-negotiate-perl (6.00-2) ...
-Selecting previously unselected package libnet-http-perl.
-Preparing to unpack .../libnet-http-perl_6.06-1_all.deb ...
-Unpacking libnet-http-perl (6.06-1) ...
-Selecting previously unselected package liblwp-protocol-https-perl.
-Preparing to unpack .../liblwp-protocol-https-perl_6.04-2ubuntu0.1_all.deb ...
-Unpacking liblwp-protocol-https-perl (6.04-2ubuntu0.1) ...
-Selecting previously unselected package libwww-robotrules-perl.
-Preparing to unpack .../libwww-robotrules-perl_6.01-1_all.deb ...
-Unpacking libwww-robotrules-perl (6.01-1) ...
-Selecting previously unselected package libwww-perl.
-Preparing to unpack .../libwww-perl_6.05-2_all.deb ...
-Unpacking libwww-perl (6.05-2) ...
-Selecting previously unselected package libxml-parser-perl.
-Preparing to unpack .../libxml-parser-perl_2.41-1build3_amd64.deb ...
-Unpacking libxml-parser-perl (2.41-1build3) ...
-Selecting previously unselected package intltool.
-Preparing to unpack .../intltool_0.50.2-2_all.deb ...
-Unpacking intltool (0.50.2-2) ...
-Processing triggers for man-db (2.6.7.1-1) ...
-Processing triggers for doc-base (0.10.5) ...
-Processing 1 added doc-base file...
-Registering documents with scrollkeeper...
-Setting up libencode-locale-perl (1.03-1) ...
-Setting up libhttp-date-perl (6.02-1) ...
-Setting up libfile-listing-perl (6.04-1) ...
-Setting up libhtml-tagset-perl (3.20-2) ...
-Setting up libhtml-parser-perl (3.71-1build1) ...
-Setting up libhtml-tree-perl (5.03-1) ...
-Setting up libio-html-perl (1.00-1) ...
-Setting up liblwp-mediatypes-perl (6.02-1) ...
-Setting up libhttp-message-perl (6.06-1) ...
-Setting up libhttp-cookies-perl (6.00-2) ...
-Setting up libhttp-negotiate-perl (6.00-2) ...
-Setting up libnet-http-perl (6.06-1) ...
-Setting up libwww-robotrules-perl (6.01-1) ...
-Setting up liblwp-protocol-https-perl (6.04-2ubuntu0.1) ...
-Setting up libwww-perl (6.05-2) ...
-Setting up libxml-parser-perl (2.41-1build3) ...
-Setting up intltool (0.50.2-2) ...
-[01;32mlucas@lucas-VM-Mint[01;34m ~/Desktop/inkscape $[00m exit
-Script done on dim. 28 sept. 2014 23:35:18 CEST
