@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HACKVent 2014 - Day 1 writeup"
+title: "HACKVent 2014 - Day 01 writeup"
 date: 2014-12-01
 ---
 <small>

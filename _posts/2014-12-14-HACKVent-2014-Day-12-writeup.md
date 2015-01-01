@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "HACKVent 2014 - Day 12 writeup"
-date: 2014-12-14
+date: 2014-12-12
 ---
-
+<small>
 I've sign up for the <a href = "hackvent.hacking-lab.com"> Hackvent event </a> made by the guys from <a href = "www.hacking-lab.com"> www.hacking-lab.com</a>, which is a advent-like hacking competition. Every day there is a new challenge posted at midnight which has a to solved at best in the same day, the challenge becoming increasingly more difficult every week completed. The aim in every puzzle is to find either a qr-encoded x-mas ball with lead to the validation code, or a secret human-readable string which gives you the former ball when feeding into a validator (the "Ball-O-Matic"). 
+</small>
 
 Here's the write-up for the mid-point challenge at day 12, concerning reverse engineering SQL scripts. 
 
@@ -301,3 +302,35 @@ SELECT mes FROM dbmsoutput order by pos
 ....
 </code></pre>
 
+Among the badly encoded string lies a unique error-less message <code>There is no place like 127.0.0.1</code> which is our solution for this challenge ! 
+
+
+PS : Once I got the solution working in PL/SQL, I backtracked my python script to discover why I wasn't getting the right result, even though I did the same exact steps. It turns out to be a capitalisation problem. The <code>CAST_TO_RAW(DBMS_OBFUSCATION_TOOLKIT.MD5)</code> returns a ALLCAPS hex string, whereas Python's <code>md5.hexdigest()</code> returns a low-case hexstring. This difference has an impact later on when xor'ing the md5 against the ciphertext, and induce wrong results. Here is the python's script which to solve the challenge :
+
+{% highlight python %}
+import md5
+secret = "617B7E0A0870637F710E42B44A3B0647433442441B4E4F1D4B471F29475C5D62"
+
+
+for x in range(13,14):
+  for y in range(17,18):
+
+    # md5 key gen
+    key = md5.new(str(x*y)).hexdigest().upper().encode("hex")
+  
+    # xor operation
+    res1 = "".join([ str(hex(int(secret[i],16) ^ int(key[i],16))[2:]) for i in range(len(secret)) ])
+    
+    # convert hex string into raw string
+    res2 = res1.decode('hex')
+  
+    # unscramble string
+    res3 = []
+    for i in range(len(res2)):
+      c = (ord(res2[i]) - len(res2) + i)
+      res3.insert(0, c)
+
+
+    # output
+    print ''.join( chr(c) for c in res3 )
+{% endhighlight python %}
