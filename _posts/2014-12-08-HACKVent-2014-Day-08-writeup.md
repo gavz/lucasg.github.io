@@ -39,9 +39,9 @@ Eval-group not allowed at runtime, use re 'eval' in regex m/(?{eval"\$a=<>;chomp
 "})/ at pearl.pl line 42.
 {% endhighlight perl %}
 
-So, this program doesn't work either, but I don't care since I got the body of the code, in human-readable format. From what I read, I assume I need $a to be equal to "0BZMNDSFZNQOBNDOFGSN1SFZ!" at the end in order for the script to print "right". I guess the corresponding $a input should be the winning text used to get the validation qr-ball.
+So, this program doesn't work either, but I don't care since I got the body of the code, in human-readable format. From what I read, I assume I need $a to be equal to <code>"0BZMNDSFZNQOBNDOFGSN1SFZ!"</code> at the end in order for the script to print "right". I guess the corresponding $a input should be the winning text used to get the validation qr-ball.
 
-the <code>chomp</code> function is only here to strip any return char in the input, the major transformation is done in the <code>$a=~tr/A-Z a-z/\"-;N-ZA-M/;</code> part. The tr function in Perl is used to translate a charset into another one, using relative position of char as table. For exemple <code>tr/a-e/1-7/</code> transform the text "deadbeef" into "4514255f". At first I tried to find the reverse table to invert the tr function, but I quicky said fuck it and did it by hand :
+the <code>chomp</code> function is only here to strip any return char in the input, the major transformation is done in the <code>$a=~tr/A-Z a-z/\"-;N-ZA-M/;</code> part. The tr function in Perl is used to translate a charset into another one, using relative position of char as table. For exemple <code>tr/a-e/1-7/</code> transform the text "deadbeef" into <code>"4514255f"</code>. At first I tried to find the reverse table to invert the tr function, but I quicky said fuck it and did it by hand :
 
 
 ![I don't know my alphabet](/assets/hackvent/08/answer.png)

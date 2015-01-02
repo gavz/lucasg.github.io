@@ -29,7 +29,7 @@ The <a href = "http://rumkin.com/tools/cipher/railfence.php" > Railfence cipher 
 
 ![Railfence 9](/assets/hackvent/03/railfence9.png)
 
-So we got a "we wish you a merry christmas" message , but there's a break at line 9 where you have to read the character just below, not in the right-bottom corner. You can also read "yours" and "key", but that's don't make much sense. Instead of reading diagonnally, I've switched to a 10-char line (and I've also modified the line before last to align the right characters) :
+So we got a  <code>"we wish you a merry christmas"</code> message , but there's a break at line 9 where you have to read the character just below, not in the right-bottom corner. You can also read "yours" and "key", but that's don't make much sense. Instead of reading diagonnally, I've switched to a 10-char line (and I've also modified the line before last to align the right characters) :
 
 <pre><code>
 WAIYTELZER
@@ -43,7 +43,7 @@ OHNRAA3DA
 URDES2DGO
 </code></pre>
 
-When reading vertically, we get "we wish you a merry christmas and your secret key is base32 GIYSA2LTEBXW43DZEBUGC3DGEB2GQZJAORZHK5DI" (beware when copying the hash not to make a mistake !). On decoding - it's a base32 hash - we get the following phrase :
+When reading vertically, we get <code>"we wish you a merry christmas and your secret key is base32 GIYSA2LTEBXW43DZEBUGC3DGEB2GQZJAORZHK5DI" </code> (beware when copying the hash not to make a mistake !). On decoding - it's a base32 hash - we get the following phrase :
 
 <pre><code>21 is only half the truth</code></pre>
 

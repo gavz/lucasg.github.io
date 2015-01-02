@@ -47,26 +47,26 @@ This python function, which is ugly as hell, given an array of previous outputs 
 
 {% highlight python %}
 def bruteforce_lcg(output_array):
-	p = Pool(8)
-	
+  p = Pool(8)
+  
 
-	manager = Manager()
-	return_list = manager.list()
-	jobs = []
+  manager = Manager()
+  return_list = manager.list()
+  jobs = []
 
-	for i in range(8):
-		r = xrange(100*((i*modulus/8)/100),100*(((i+1)*modulus/8)/100),100)
-		print r
+  for i in range(8):
+    r = xrange(100*((i*modulus/8)/100),100*(((i+1)*modulus/8)/100),100)
+    print r
 
-		p = Process(target=init_worker, args=(i,r,output_array, return_list))
-		jobs.append(p)
-		p.start()
+    p = Process(target=init_worker, args=(i,r,output_array, return_list))
+    jobs.append(p)
+    p.start()
 
-	for proc in jobs:
-		proc.join()
+  for proc in jobs:
+    proc.join()
 
 
-	return return_list
+  return return_list
 {% endhighlight python %}
 
 As for <a href="/post/2014/12/17/HACKVent-2014-Day-17-writeup/"> Challenge 17 </a> it's recommended to use a multithreaded environment to run the bruteforce script. Now that we can predict an output, it's easy to lose small amounts in order to collect series of outputs and go all in when we know for sure the next number. The following routine gives a unique number - most of the times - if we gives an 7-number following sequence of outputs :
@@ -83,19 +83,19 @@ multiplier = 1664525
 increment = 1013904223
 
 def lcg(seed):
-	new_seed = (multiplier*seed + increment) % modulus
-	return new_seed
+  new_seed = (multiplier*seed + increment) % modulus
+  return new_seed
 
 def lcg_array(seed, output_count):
 
-	def generator(seed):
-		i = seed
-		while True:
-			i =  lcg(i)
-			yield i % 100
+  def generator(seed):
+    i = seed
+    while True:
+      i =  lcg(i)
+      yield i % 100
 
-	return list(islice(generator(seed),output_count))
-	
+  return list(islice(generator(seed),output_count))
+  
 def init_worker(procnum, rang, output_array,  return_list):
     
     ret = [ i+output_array[0] for i in ifilter(lambda s: lcg(s+output_array[0]) % 100 == output_array[1], rang )]
@@ -111,38 +111,38 @@ def init_worker(procnum, rang, output_array,  return_list):
     
 
 def bruteforce_lcg(output_array):
-	p = Pool(8)
-	
+  p = Pool(8)
+  
 
-	manager = Manager()
-	return_list = manager.list()
-	jobs = []
+  manager = Manager()
+  return_list = manager.list()
+  jobs = []
 
-	for i in range(8):
-		r = xrange(100*((i*modulus/8)/100),100*(((i+1)*modulus/8)/100),100)
-		print r
+  for i in range(8):
+    r = xrange(100*((i*modulus/8)/100),100*(((i+1)*modulus/8)/100),100)
+    print r
 
-		p = Process(target=init_worker, args=(i,r,output_array, return_list))
-		jobs.append(p)
-		p.start()
+    p = Process(target=init_worker, args=(i,r,output_array, return_list))
+    jobs.append(p)
+    p.start()
 
-	for proc in jobs:
-		proc.join()
+  for proc in jobs:
+    proc.join()
 
-	return return_list
+  return return_list
 
 
 
 
 if __name__ == "__main__":
 
-	# arr = [7,98,93,52,51,38,85]
-	arr = [ int(i) for i in sys.argv[1:8]]	
-	print arr
+  # arr = [7,98,93,52,51,38,85]
+  arr = [ int(i) for i in sys.argv[1:8]]  
+  print arr
 
-	s = bruteforce_lcg(arr)
+  s = bruteforce_lcg(arr)
 
-	print lcg_array(int(s[0]),7)
+  print lcg_array(int(s[0]),7)
 
 {% endhighlight python %}
 

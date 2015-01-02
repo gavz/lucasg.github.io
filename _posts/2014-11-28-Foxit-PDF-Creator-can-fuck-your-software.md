@@ -4,7 +4,7 @@ title: "Foxit PDF Creator can fuck your software"
 date: 2014-11-28
 ---
 
-I stumbled across a curious bug at work today. I'm currently updating some old bits of code managing the printing of a report ( the software's current configuration and whats not), the files had not been modified for almost ten years. At one point my XPS output crashed (it couldn't handle the "\r\n" chars) so I decided to take a look at the PDF version.
+I stumbled across a curious bug at work today. I'm currently updating some old bits of code managing the printing of a report ( the software's current configuration and whats not), the files had not been modified for almost ten years. At one point my XPS output crashed (it couldn't handle the <code>"\r\n"</code> chars) so I decided to take a look at the PDF version.
 
 <!--more-->
 

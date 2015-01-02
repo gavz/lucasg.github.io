@@ -28,8 +28,8 @@ First we have to find the two primes numbers which forms n, which means we have 
 
 {% highlight python %}
 def factors(n):    
-	    return set(reduce(list.__add__, 
-	                ([i, n//i] for i in range(1, int(n**0.5) + 1) if n % i == 0)))
+      return set(reduce(list.__add__, 
+                  ([i, n//i] for i in range(1, int(n**0.5) + 1) if n % i == 0)))
 fact = [ f for f in itertools.ifilter( lambda i : i != 1 and i != int(n), factors(int(n)) )]
 {% endhighlight python %}
 
@@ -68,52 +68,52 @@ from multiprocessing import Pool
 
 def decode( inec):
 
-	i,n,e,c = inec
+  i,n,e,c = inec
 
-	def egcd(a, b):
-	    if a == 0:
-	        return (b, 0, 1)
-	    else:
-	        g, y, x = egcd(b % a, a)
-	        return (g, x - (b // a) * y, y)
+  def egcd(a, b):
+      if a == 0:
+          return (b, 0, 1)
+      else:
+          g, y, x = egcd(b % a, a)
+          return (g, x - (b // a) * y, y)
 
-	def modinv(a, m):
-	    g, x, y = egcd(a, m)
-	    if g != 1:
-	        #raise Exception('modular inverse does not exist')
-	        return 1
-	    else:
-	        return x % m
+  def modinv(a, m):
+      g, x, y = egcd(a, m)
+      if g != 1:
+          #raise Exception('modular inverse does not exist')
+          return 1
+      else:
+          return x % m
 
-	def factors(n):    
-	    return set(reduce(list.__add__, 
-	                ([i, n//i] for i in range(1, int(n**0.5) + 1) if n % i == 0)))
+  def factors(n):    
+      return set(reduce(list.__add__, 
+                  ([i, n//i] for i in range(1, int(n**0.5) + 1) if n % i == 0)))
 
 
- 	fact = [ f for f in itertools.ifilter( lambda i : i != 1 and i != int(n), factors(int(n)) )]
- 	#print fact
+   fact = [ f for f in itertools.ifilter( lambda i : i != 1 and i != int(n), factors(int(n)) )]
+   #print fact
 
- 	phi = (fact[0] - 1)*(fact[1]-1)
+   phi = (fact[0] - 1)*(fact[1]-1)
 
- 	d = modinv(int(e), phi)
+   d = modinv(int(e), phi)
 
- 	
- 	print str(i).zfill(5), ":", int(c), int(n), int(e), fact, phi, d, "->", (int(c)**d) % (fact[0]*fact[1])
+   
+   print str(i).zfill(5), ":", int(c), int(n), int(e), fact, phi, d, "->", (int(c)**d) % (fact[0]*fact[1])
 
 
 
 
 if __name__ == '__main__':
-	p = Pool(178)
+  p = Pool(178)
 
-	idx = range(178)
-	nfile = open("n","r").readlines()
-	efile = open("e","r").readlines()
-	cfile = open("c","r").readlines()
-	
-	print "idx, cipher, n, e, fact, phi, d, plaintext"
+  idx = range(178)
+  nfile = open("n","r").readlines()
+  efile = open("e","r").readlines()
+  cfile = open("c","r").readlines()
+  
+  print "idx, cipher, n, e, fact, phi, d, plaintext"
 
-	p.map(decode, zip(idx,nfile,efile,cfile))
+  p.map(decode, zip(idx,nfile,efile,cfile))
 {% endhighlight python %}
 
 This python script is quite efficient : 

@@ -63,10 +63,10 @@ signal = snd[:,0]
 tones_count = int(snd.shape[0]*10.0/(sampFreq*1.0))
 
 for i in range(0,tones_count):
-	s = signal[i/10.0*sampFreq : (i+1)*sampFreq/10.0]
-	fftData=abs(np.fft.rfft(s))**2	
-	
-	print i, fftData[1:].argmax() / 200  
+  s = signal[i/10.0*sampFreq : (i+1)*sampFreq/10.0]
+  fftData=abs(np.fft.rfft(s))**2  
+  
+  print i, fftData[1:].argmax() / 200  
 {% endhighlight python %}
 
 <pre><code> 011000010110110001101001011001010110111001101000011000010110001101101011011000010111010001110100011000010110001101101011

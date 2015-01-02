@@ -119,14 +119,14 @@ b = [c for c in itertools.ifilter(lambda i: i & 543210 == 18752, range(1<<16, 2<
 
 for x in range(3<<16,4<<16):
 
-	for y in b:
-		t1 = x & 57005 | y >> 10 == 54399
-		t2 = x ^ 12648430 | y == 12845045
-		t3 = x&3==2 and y&3==1
+  for y in b:
+    t1 = x & 57005 | y >> 10 == 54399
+    t2 = x ^ 12648430 | y == 12845045
+    t3 = x&3==2 and y&3==1
 
-		if t1 and t2 and t3:
-			
-			ab.append((x,y))
+    if t1 and t2 and t3:
+      
+      ab.append((x,y))
 
 
 print ab
@@ -138,12 +138,12 @@ And I use only the valid (x,y) tuplet to check for the rest of the conditions :
 abcd = []
 
 for (x,y) in ab:
-	for z in itertools.ifilter(lambda i: i&y== 30992, range(6<<16, 7<<16)):
-		if (z>>16 == 6 and z&3 ==2) and (507707 == (y | z) ^ x - 234242):
-		
-			t = (x ^ y) + z
-			print x,y,z,t
-			abcd.append((x,y,z,t))
+  for z in itertools.ifilter(lambda i: i&y== 30992, range(6<<16, 7<<16)):
+    if (z>>16 == 6 and z&3 ==2) and (507707 == (y | z) ^ x - 234242):
+    
+      t = (x ^ y) + z
+      print x,y,z,t
+      abcd.append((x,y,z,t))
 
 
 print abcd

@@ -112,7 +112,7 @@ The sqlfiddler website being DDOS'ed from the hackvent candidates trying to decr
 
 <pre> <code> Error at line 0: PLS-00753: malformed or corrupted wrapped unit 0.02 seconds </code> </pre> 
 
-Google's first anwser to this error message is a blog post in which the author claim that the error result from the following condition : “This only happens if the last character of the wrapped code is at the end of a line”. Well let's take another look at the script :
+Google's first anwser to this error message is a blog post in which the author claim that the error result from the following condition : "This only happens if the last character of the wrapped code is at the end of a line". Well let's take another look at the script :
 
 
 ![Script text structure](/assets/hackvent/day12/2_queries.png)
@@ -124,34 +124,34 @@ When looking at the script's structure, we can deduct that there is two queries,
 
 PACKAGE BODY HACKvent IS
 
-	FUNCTION ENCODE(INPLAINTEXT IN VARCHAR2) RETURN VARCHAR2 IS
+  FUNCTION ENCODE(INPLAINTEXT IN VARCHAR2) RETURN VARCHAR2 IS
     KEY VARCHAR(100) := '';
     RES VARCHAR(100) := '';
     RES1 VARCHAR(100) := '';
     X NUMBER(2);
     Y NUMBER(2);
-	BEGIN
+  BEGIN
 
-		SELECT ROUND(DBMS_RANDOM.VALUE(10,20)) INTO X FROM DUAL;
-		SELECT ROUND(DBMS_RANDOM.VALUE(10,20)) INTO Y FROM DUAL;
+    SELECT ROUND(DBMS_RANDOM.VALUE(10,20)) INTO X FROM DUAL;
+    SELECT ROUND(DBMS_RANDOM.VALUE(10,20)) INTO Y FROM DUAL;
 
-		KEY := UTL_RAW.CAST_TO_RAW(DBMS_OBFUSCATION_TOOLKIT.MD5(INPUT_STRING => X*Y));
-
-
-		FOR I IN 1..LENGTH(INPLAINTEXT) LOOP
-			RES1 := CHR(ASCII(SUBSTR(INPLAINTEXT,I,1))+I) || RES1;
-		END LOOP;
-
-		RES := 
-	    UTL_RAW.BIT_XOR(
-	    	UTL_RAW.CAST_TO_RAW(RES1),
-	    	UTL_RAW.CAST_TO_RAW(KEY)
-			);
+    KEY := UTL_RAW.CAST_TO_RAW(DBMS_OBFUSCATION_TOOLKIT.MD5(INPUT_STRING => X*Y));
 
 
-		RETURN RES;
+    FOR I IN 1..LENGTH(INPLAINTEXT) LOOP
+      RES1 := CHR(ASCII(SUBSTR(INPLAINTEXT,I,1))+I) || RES1;
+    END LOOP;
 
-	END ENCODE; 
+    RES := 
+      UTL_RAW.BIT_XOR(
+        UTL_RAW.CAST_TO_RAW(RES1),
+        UTL_RAW.CAST_TO_RAW(KEY)
+      );
+
+
+    RETURN RES;
+
+  END ENCODE; 
   
   
   
@@ -159,12 +159,12 @@ PACKAGE BODY HACKvent IS
     HINT VARCHAR2(100);
   BEGIN
 
-		HINT := 'Hohoho, this part you have to do on your own ;-)';
-		RETURN HINT;
+    HINT := 'Hohoho, this part you have to do on your own ;-)';
+    RETURN HINT;
     
   END DECODE; 
 
-	
+  
 
   
 END HACKVENT; 
@@ -196,7 +196,7 @@ Now I see why the script's author couldn't decrypt his password : the key used f
 
 {% highlight pl %}
 FOR I IN 1..LENGTH(INPLAINTEXT) LOOP
-	RES1 := CHR(ASCII(SUBSTR(INPLAINTEXT,I,1))+I) || RES1;
+  RES1 := CHR(ASCII(SUBSTR(INPLAINTEXT,I,1))+I) || RES1;
 END LOOP;
 {% endhighlight pl %}
 
@@ -210,9 +210,9 @@ Exemple of encryption :
 {% highlight pl %}
 RES := 
     UTL_RAW.BIT_XOR(
-    	UTL_RAW.CAST_TO_RAW(RES1),
-    	UTL_RAW.CAST_TO_RAW(KEY)
-		);
+      UTL_RAW.CAST_TO_RAW(RES1),
+      UTL_RAW.CAST_TO_RAW(KEY)
+    );
 {% endhighlight pl %}
 
 That's standard XOR encryption here. In order to reverse the encoding algorithm, we have to generate every 55 keyseed possibles and their equivalent hex-based md5 hash, then reversing the twisted-but-deterministic scrambling part and trying to find the secret password in the haystack of non-printable char spewed by the sql script. After a lot of trials-and-errors, this is a working decoder : 

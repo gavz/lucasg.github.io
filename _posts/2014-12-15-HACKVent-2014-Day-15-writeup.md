@@ -94,10 +94,10 @@ char code[] = "\xc8\x08\x00\x00\xc6\x45\xf8\x77\xb0\x13\x34\x7e\x88\x45\xf9\x6a\
 
 int main(int argc, char **argv)
 {
-	char* (*func)();
-	func = (char* (*)()) code;
+  char* (*func)();
+  func = (char* (*)()) code;
 
-	printf("%s", (char*)(*func)());
+  printf("%s", (char*)(*func)());
 }
 {% endhighlight C %}
 

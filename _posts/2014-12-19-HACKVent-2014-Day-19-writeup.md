@@ -31,13 +31,13 @@ out = bmp_header
 
 for i in range(0,len(f),3):
 
-	r,g,b = map( lambda c: int(c, 16), f[i:i+3])
-	r,g,b = r&1,g&1,b&1
+  r,g,b = map( lambda c: int(c, 16), f[i:i+3])
+  r,g,b = r&1,g&1,b&1
 
-	v = ((not r) & g^b)
+  v = ((not r) & g^b)
 
-	out += ( ("000000","ffffff")[v] )
-	
+  out += ( ("000000","ffffff")[v] )
+  
 
 print "".join(out).decode('hex')
 {% endhighlight python %}
