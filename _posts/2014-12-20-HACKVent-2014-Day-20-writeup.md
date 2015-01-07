@@ -193,19 +193,19 @@ if __name__ == '__main__':
 
 
     clean_m = m.rstrip("= ?")      \
-    		   .replace("o","0")   \
-    		   .replace(" It ","*")\
-    		   .replace(" ; ","*") \
-    		   .replace(' 1 ','*') \
-    		   .replace(' 6 ','*') \
-    		   .replace(' 5 ','*') \
-    		   .replace(' 2 ','*') \
-    		   .replace(' 8 ','*') \
-    		   .replace(' 4 ','*') \
-    		   .replace(' 7 ','-') \
-    		   .replace('x','*')   \
-    		   .replace(" 3 ", "*")\
-    		   .replace("\xe2\x80\x94","-")
+           .replace("o","0")   \
+           .replace(" It ","*")\
+           .replace(" ; ","*") \
+           .replace(' 1 ','*') \
+           .replace(' 6 ','*') \
+           .replace(' 5 ','*') \
+           .replace(' 2 ','*') \
+           .replace(' 8 ','*') \
+           .replace(' 4 ','*') \
+           .replace(' 7 ','-') \
+           .replace('x','*')   \
+           .replace(" 3 ", "*")\
+           .replace("\xe2\x80\x94","-")
 
     print int(nsp.eval( clean_m))
 {% endhighlight python %}
@@ -222,19 +222,19 @@ I used ImageMagick (I never ceased to be amazed by its efficiency) convert tool 
 Once we get every part right, you just need to wrap it up using a simple shell script :
 
 
-{% highlight shell %}
+{% highlight sh %}
 curl -c cookies.txt "http://212.254.178.162/1JnjqflWseX_29Ow-YXH/" -o 1JnjqflWseX_29Ow-YXH1.gif
 for i in {1..30}
 do
-	fday=1JnjqflWseX_29Ow-YXH$i
-	eqday=equation$i
-	convert $fday.gif -resize "200%" big.gif
-	tesseract big.gif $eqday
-	payload=$(python numerical_parser.py $eqday.txt | tr -d '\r')
-	echo $payload
-	curl -X POST -b cookies.txt --data "result="$payload "http://212.254.178.162/1JnjqflWseX_29Ow-YXH/" -o 1JnjqflWseX_29Ow-YXH$((i+1)).gif
+  fday=1JnjqflWseX_29Ow-YXH$i
+  eqday=equation$i
+  convert $fday.gif -resize "200%" big.gif
+  tesseract big.gif $eqday
+  payload=$(python numerical_parser.py $eqday.txt | tr -d '\r')
+  echo $payload
+  curl -X POST -b cookies.txt --data "result="$payload "http://212.254.178.162/1JnjqflWseX_29Ow-YXH/" -o 1JnjqflWseX_29Ow-YXH$((i+1)).gif
 done
-{% endhighlight shell %}
+{% endhighlight sh %}
 
 
 You get 30 differents gif files, the latest one being a x-mas qr-ball :p
