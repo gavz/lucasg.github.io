@@ -12,7 +12,9 @@ For that matter, I always use `Python` with `Tkinter` since it's much faster to 
 
 It turns out, there is no "easy" way to implement a double scrollbar frame in Tkinter, so I had to come up with my own (Python 3.4) : 
 
+
 {% highlight python tabsize= 2%}
+
 
 import tkinter as tk
 from tkinter import ttk
