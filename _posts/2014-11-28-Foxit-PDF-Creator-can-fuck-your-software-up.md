@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Foxit PDF Creator can fuck your software"
+title: "Foxit PDF Creator can fuck your software up"
 date: 2014-11-28
 ---
 
