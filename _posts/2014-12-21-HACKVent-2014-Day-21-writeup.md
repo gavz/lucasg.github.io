@@ -12,10 +12,7 @@ Here's the write-up for the challenge at day 21, in which we will learn how to g
 
 <!--more-->
 
-## Ocean's Se7en Part :
-
-- - - - - - -
-
+## Ocean's Se7en Part 
 
 For the Day 21 Hackvent challenge, we were given the following instructions :
 
