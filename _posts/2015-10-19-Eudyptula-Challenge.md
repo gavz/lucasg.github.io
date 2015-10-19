@@ -1,9 +1,8 @@
 ---
-published: false
 layout: post
 ---
 
-A few months ago I started the Eudyptula challenge, which is a series of coding tests designed to present how to hack and contribute to the Linux kernel for a newcommer like myself.
+A few months ago I started the [Eudyptula challenge](http://eudyptula-challenge.org/), which is a series of coding tests designed to present how to hack and contribute to the Linux kernel for a newcommer like myself.
 
 <!--more-->
 
