@@ -4,7 +4,6 @@ markdown: kramdown
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
 
 # Setup
 title:            lucasg.github.io
@@ -12,14 +11,12 @@ tagline:          blog
 paginate:         1
 url:          	  http://lucasg.github.io
 baseurl:         /
-# author:
-#   name:           Mark Otto
-#   url:            https://twitter.com/mdo
-#   email:          markdotto@gmail.com
+author:
+  name:           lucasg
+  email:          lucasg@outlook.com
 
 # Custom vars
 version:          1.0.0
 github:		  [Repository metadata]
-  # repo:           https://github.com/poole/poole
 
 excerpt_separator: <!--more-->
