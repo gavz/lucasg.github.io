@@ -4,7 +4,7 @@ title: "Enable non-signed drivers to be loaded and ran under Windows"
 date: 2016-03-09
 ---
 
-"Recents" Windows (from XP up to 10) force by default drivers to be signed (i.e. by Verisign) in order to be launched. This behavior, which has greatly reduced the attack surface for malware creators, can be a hindsrance when you want to develop custom drivers. Here's how to disable it.
+"Recents" Windows (from XP up to 10) force by default drivers to be signed (i.e. by Verisign) in order to be launched. This behavior, which has greatly reduced the attack surface for malware creators, can be a hindrance when you want to develop custom drivers. Here's how to disable it.
 
 
 <!--more-->
