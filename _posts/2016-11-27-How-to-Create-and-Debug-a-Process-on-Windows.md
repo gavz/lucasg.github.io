@@ -56,8 +56,8 @@ will prevent them from an early exit.
 
 Secondly, the process identifier returned in ```PROCESS_INFORMATION.dwProcessId``` may not always be the created process PID !
 
-![Returned PID for the mstsc create process](/assets/created_mstsc_process.png)
-![ProcessHacker is a beast of program !](/assets/created_mstsc_process_phacker.png)
+![Returned PID for the mstsc create process](/assets/created_mstsc_process.PNG)
+![ProcessHacker is a beast of program !](/assets/created_mstsc_process_phacker.PNG)
 
 For some process, the returned PID (```8440``` in the example) does not refer to the created process PID (```10400```) but it's parent. I did not exactly pinpoint the root cause of this behaviour, but nevertheless it's pretty annoying to handle : we need to iterate over every running process and find which has our PID as a parent.
 
@@ -180,7 +180,7 @@ Process base address : 0000000000000000
 </pre>
 
 A non-invasive ```cdb``` injection reveal what's happening :
-![Windbg is kinda lost here](/assets/suspended_mspaint_process.png)
+![Windbg is kinda lost here](/assets/suspended_mspaint_process.PNG)
 
 We don't have any informations since nothing has been loaded ! ```CREATE_SUSPENDED``` is 
 useful for separating the process creation from the process run, not for our use case.
