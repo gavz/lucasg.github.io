@@ -183,9 +183,15 @@ pre code {
 .highlight {
   margin-bottom: 1rem;
   border-radius: 4px;
+  margin: 0;
 }
 .highlight pre {
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+figure.highlight {
+  padding: .25em .5em .25em .25em;
 }
 
 /* Gist via GitHub Pages */
