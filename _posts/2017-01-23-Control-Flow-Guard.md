@@ -89,10 +89,10 @@ They are three optional tables for `CFG` protection:
 
 Each table is an virtual address to an array of RVA entries concatenated with an optional flag "header" based on which `GuardFlags` flag is set. In theory the flags header can be up to 8 bytes, but it probably won't exceed a byte.
 
-	+==============+-------++==============+-------++==============+-------++==============+-------+
-	|     RVA      | flags ||     RVA      | flags ||     RVA      | flags ||     RVA      | flags |
-	+==============+-------++==============+-------++==============+-------++==============+-------+
-	        Entry #1                Entry #2                Entry #3                Entry #4
+	+============+-------++============+-------++============+-------++============+-------+
+	|     RVA    | flags ||     RVA    | flags ||     RVA    | flags ||     RVA    | flags |
+	+============+-------++============+-------++============+-------++============+-------+
+	        Entry #1              Entry #2              Entry #3              Entry #4
 
 ## GuardCFFunctionTable
 
