@@ -20,3 +20,7 @@ version:          1.0.0
 github:		  [Repository metadata]
 
 excerpt_separator: <!--more-->
+
+# gems
+gems:
+  - jekyll-feed
