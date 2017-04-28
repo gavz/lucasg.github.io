@@ -53,7 +53,7 @@ with open("urlist.json", "r") as docset_json :
 The `reporthook` callback function is something I have copied from [StackOverflow](http://stackoverflow.com/questions/13881092/download-progressbar-for-python-3) in order to have a download progress bar (some docsets weight more than 100 MB). In the end the whole official docset list is around 9 GB.
 
 
-If you're using `Velocity` or `Dash` regularly, I encourage you to buy a license (moreso if you're using it professionnally). Each application is the work of a single developper, and probably their daily breadwinner. I known I intend to buy a license, if only to be able to send features requests. 
+If you're using `Velocity` or `Dash` regularly, I encourage you to buy a license (moreso if you're using it professionnally). Each application is the work of a single developper, and probably their daily breadwinner. I know I intend to buy a license, if only to be able to send features requests. 
 
 My only gripes so far with `Velocity` (I haven't tried `Dash`) :
 
