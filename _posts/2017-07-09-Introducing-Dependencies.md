@@ -6,7 +6,7 @@ date: 2017-07-09
 
 Recently I wanted to study the way `C#` can interop with native code, notably via the use of enlightened C++ dlls ([C++/CLI](https://blogs.msdn.microsoft.com/texblog/2007/04/05/linking-native-c-into-c-applications/) as Microsoft calls it).
 
-The best way to learn about a subject is by making stuff, so I decided to write a C# application embedding native code. Since I don't know much about `C#`, I choose to reimplement an existing software : the venerable [`Depedency Walker`](http://www.dependencywalker.com/) which is used by pretty much all the Windows devs over 40 y.o. to troubleshoot their dll load dependency issues.
+The best way to learn about a subject is by making stuff, so I decided to write a C# application embedding native code. Since I don't know much about `C#`, I choosed to reimplement an existing software : the venerable [`Depedency Walker`](http://www.dependencywalker.com/) which is used by pretty much all the Windows devs over 40 y.o. I.ve known to troubleshoot their dll load dependency issues.
 
 I end up writing a full fledged GUI application that partially mimics the features of `depends.exe` and I learn a lot about `WPF` and the dying art of desktop GUI development in the process.
 
@@ -19,7 +19,7 @@ You can get it here : [https://lucasg.github.io/Dependencies/](https://lucasg.gi
 <br>
 
 
-`depends.exe` is what I would call a "get-shit-done-ware", i.e. a self-contained software that works reliably and add a real value to the user. However, `depends.exe` is not actively maintained anymore and fore example does not process the `api-min-win-*-.dll` correctly. On the flip side, it's a marvel that `depends.exe` still pretty works as is 10 years after being brain dead, development wise. I guess it's another example of the hardcore retro-compatibility mindset in Windows dev teams.
+`depends.exe` is what I would call a "get-shit-done-ware", i.e. a self-contained software that works reliably and add a real value to the user. However, `depends.exe` is not actively maintained anymore and for example does not correctly process the `api-min-win-*-.dll`. On the flip side, it's a marvel that `depends.exe` still pretty much works as is 10 years after being brain dead, development wise. I guess it's another example of the hardcore retro-compatibility mindset in Windows dev teams.
 
 Anyway, I thought it was a good idea to revamp it a bit and learn probably a thing or two about dll loading on Windows.
 
@@ -27,12 +27,12 @@ Anyway, I thought it was a good idea to revamp it a bit and learn probably a thi
 
 When building a dll dependency walker, the first brick to get is a `PE` parser since we need to extract `IMAGE_IMPORT_DESCRIPTOR` data structures from the target executable. 
 
-A good developer can reliably extract thoses features using Windows API, but a better developer would reuse an open-source library that already does it. [Unfortunately, there is not a rock-solid open source `PE` parser library in C](https://lucasg.github.io/2017/04/28/the-sad-state-of-pe-parsing) which says a lot about the `RE` community as a whole. Nevertheless, I end up using `ProcessHacker` `phlib` library which has nice wrappers for `PE` parsing and which is pretty much standalone : it only relies on `ntdll.lib` ! Whenever I lack a feature in `phlib`, I usually write it myself and upstream it if possible.
+A good developer can reliably extract thoses features using Windows APIs, but a better developer would reuse an open-source library that already does it. [Unfortunately, there is not a rock-solid open source `PE` parser library in C](https://lucasg.github.io/2017/04/28/the-sad-state-of-pe-parsing) which says a lot about the `RE` community as a whole. Nevertheless, I end up using `ProcessHacker` `phlib` library which has nice wrappers for `PE` parsing and which is pretty much standalone : it only relies on `ntdll.lib` ! Whenever I lack a feature in `phlib`, I usually write it myself and upstream it if possible.
 
 
 ## Embedding native code in a CLR package
 
-Writing a CLR package over a native library is done automagically via a Visual Studio project `Visual C++\CLR\Class library` ([more info on the MSDN](https://msdn.microsoft.com/en-us/library/z6ad605x.aspx)). There are some caveat when building such library - and which would merit a standalone blog post in the future - but with enough `ref` tags and `gcnew` calls sprinkled over here and there, everything falls into place.
+Writing a CLR package over a native library is done automagically via a Visual Studio project `Visual C++\CLR\Class library` ([more info on the MSDN](https://msdn.microsoft.com/en-us/library/z6ad605x.aspx)). There are some caveats when building such libraries - and which would merit a standalone blog post in the future - but with enough `ref` tags and `gcnew` calls sprinkled over here and there, everything falls into place.
 
 `ClrPhLib` is the CLR dll which glue the native `phlib` code with the CLR environment. I haven't seen a previous public work on this type of wrapping (apart from the examples on the MSDN) so I had to "improvise". I end up separating the classes from the "managed world" (which are garbage collected) and the "unmanaged world" (whose alloc/free are up to the library writer).
 
@@ -57,6 +57,8 @@ Apparently there is currently two GUI active toolkits, UWP for building cross-pl
 
 Windows Presentation Framework is a pretty powerful GUI toolkit that rely on the MVVM (Model-View-ModelView) design pattern to separate GUI logic from "core" business logic. The "View" part is done via a xaml stylesheet that defines widgets and specify their bindings with the data structures underlying. This design pattern nicely encapsulate away the drawing logic (resising elements, invalidating rects, etc.) from the developer and allow him to focus on writing data processing routines, as long as the developer stays within the given model.
 
-However it makes harder for troubleshooting bindings issues, especially CommandBindings contexts since we can't debug the calls easily (everything is async). But if there is something I've learned as a reverse engineer, it's to throw random inputs until it starts to make sense (or luckily stumble into a working solution ).
+However it makes harder for troubleshooting bindings issues, especially CommandBindings contexts since we can't debug the calls easily (everything is async). But if there is something I've learned as a reverse engineer, it's to throw random inputs until it starts to make sense (or luckily stumble into a working solution).
+
+## Parting thoughts
 
 In conclusion, WPF allow me to quickly write a somewhat decent GUI application in the span of several weeks on my free time, which is pretty nice. I don't intend to actively develop `Dependencies` any more than writing some additional features that are already on my roadmap, but I'll try to fix reported bugs here and there.
