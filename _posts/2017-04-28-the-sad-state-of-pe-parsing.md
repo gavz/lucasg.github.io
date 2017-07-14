@@ -38,11 +38,12 @@ I recently wanted to extract features from a set of binairies in a scriptable wa
 Since there was no satisfying solution (at least to me) I decided to go the `C` way (or `C++` with `C`-like `API`) since it's the *lingua franca* of software interoperability. Again, I was kinda let down by the "choice" proposed :
 
 * `Windows` offers some internal structures and few `API` to read `PE` files (`IMAGE_XXX_HEADER`, etc.) but you have to roll your own implementation every time.
-* [trailsofbits/pe-parse](https://github.com/trailofbits/pe-parse) :  my main gripe against this parser is it does not return structured data, you can only registers callbacks on parsing events. (Granted, it's only a "lightweight" parser.)
+*[`COFFI`](https://github.com/serge1/COFFI) Unsupported PE/COFF parser in C++.
+* [`trailsofbits/pe-parse`](https://github.com/trailofbits/pe-parse) :  my main gripe against this parser is it does not return structured data, you can only registers callbacks on parsing events. (Granted, it's only a "lightweight" parser.)
 * `lldb/Plugins` : every debugger implement a `PE` parser, `lldb` is among those. However it does have some missing features (it does not list exports by ordinals).
 * `radare\bin` : `radare2` (like `ida`) embed binary parsers. It's probably the most solid and feature-full one I've seen, even if the source code style deter me from wanting to use it.
-* [quarkslab/leif](https://lief.quarkslab.com/) : the new kid one the `PE` parsing block. However I did not managed to compile it on Windows (it redefine as C++ enums name that macro-defined in `Windows` WDK like `IMAGE_FILE_MACHINE_AMD64`). After two hours of trying, my patience ran short.
-* `ProcessHacker\phlib` : ProcessHacker actually implement a pretty feature wide `PE` parser in its library `phlib`.
+* [`quarkslab/leif`](https://lief.quarkslab.com/) : the new kid one the `PE` parsing block. However I did not managed to compile it on Windows (it redefine as C++ enums name that macro-defined in `Windows` WDK like `IMAGE_FILE_MACHINE_AMD64`). After two hours of trying, my patience ran short.
+* [`ProcessHacker\phlib`](https://github.com/processhacker2/processhacker) : ProcessHacker actually implement a pretty feature wide `PE` parser in its library `phlib`.
 
 Since I've previously worked on `ProcessHacker` and I was somewhat familiar with the codebase, I decided to give it a shot. Surprinsingly enough, it was easy to rip the necessary code : just copy `phlib` and `phnt` (headers only)  folders in your project root dir and as long as you compile as a static runtime, you're set.
 
@@ -50,4 +51,4 @@ Anyway, I'm working on removing bugs in `phlib` whenever I found some :
 
 * [missing exports by ordinals](https://github.com/processhacker2/processhacker2/pull/125)
 * [rva for exports not correctly computed](https://github.com/processhacker2/processhacker2/commit/f73aea5e353b40cc1048fe64d8b26a6fdc2adfd9)
-
+* [undecorate C++ names](https://github.com/processhacker2/processhacker/pull/139)
