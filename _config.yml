@@ -10,10 +10,11 @@ title:            lucasg.github.io
 tagline:          blog
 paginate:         1
 url:          	  http://lucasg.github.io
-baseurl:         /
+baseurl:          http://lucasg.github.io/
 author:
   name:           lucasg
-  email:          lucasg@outlook.com
+  email:          lucas.georges@outlook.com
+  github:         https://github.com/lucasg
 
 # Custom vars
 version:          1.0.0
