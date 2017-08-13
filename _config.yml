@@ -14,7 +14,7 @@ baseurl:          http://lucasg.github.io/
 author:
   name:           lucasg
   email:          lucas.georges@outlook.com
-  github:         https://github.com/lucasg
+  github:         lucasg
 
 # Custom vars
 version:          1.0.0
