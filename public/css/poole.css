@@ -48,8 +48,8 @@ body {
 }
 
 html {
-  font-family: Merriweather, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol;
+  font-size: 15px;
   line-height: 1.5;
 }
 @media (min-width: 38em) {
@@ -296,7 +296,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .container {
-  max-width: 60rem;
+  max-width: 65rem;
   padding-left:  1rem;
   padding-right: 1rem;
   margin-left:  auto;
