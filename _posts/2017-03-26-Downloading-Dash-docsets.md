@@ -15,6 +15,10 @@ However I recently wanted to set up `Velocity` on a truly disconnected computer 
 
 There is an easy way to download all the user-generated docset (just `git clone https://github.com/Kapeli/Dash-User-Contributions.git`) in order to manually import them into `Velocity`, but not for the official Dash docsets.
 
+UPDATE : user contributed docsets have been moved into a CDN, just like the official ones. I've updated the bulk downloader to support also UserContributed docsets : [dash-doggybag](https://gist.github.com/lucasg/174e04125391f6e24b6f1070fc489a8d#file-dash-doggybag-py)
+
+<script src="https://gist.github.com/lucasg/174e04125391f6e24b6f1070fc489a8d.js"></script>
+
 I had to write a semi-automated wget downloader in Python(3) :
 
 {% highlight python %}
