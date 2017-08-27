@@ -4,16 +4,16 @@ title: "Writing a custom dash docset for Powershell docs"
 date: 2017-08-24
 ---
 
-Powershell has become the default shell since Windows 10 Creator's Update and it's starting to become more than just a framework for malware deployment ([not my words](https://twitter.com/MalwareTechBlog/status/891005091985203201)). Apart from the langage itself which feel alien to me (is it a shell ? a scripting langage ? a programming langage ? a duck ?) my biggest gripe against Powershell is the lack of documentation accessible from an offline network (or simply without direct access to the Internet). For a shell that have been created for sysadmins, you would imagine MS would have thought of shipping Powershell with "batteries included". I can not count the amount of times I needed to do a powershell-related search on my smartphone while operating on a detached network.
+Powershell has became the default shell since Windows 10 Creator's Update and it's starting to become more than just a framework for malware deployment ([not my words](https://twitter.com/MalwareTechBlog/status/891005091985203201)). Apart from the langage itself which feel alien to me (is it a shell ? a scripting langage ? a programming langage ? a duck ?) my biggest gripe with Powershell is the lack of documentation accessible from an offline network (or simply without direct access to the Internet). For a shell that have been created for sysadmins, you would imagine MS would have thought of shipping Powershell with "batteries included". I can not count the amount of times I needed to do a powershell-related search on my smartphone while operating on a detached network.
 
-Secondly, until recently there was no easy way to query help for a specific API (for example `Get-ChildItem`). There is evidently the `Get-Help` cmdlet which show the "manpage" associated with the specific cmdlet but that too grab the documentation from the Internet ! At least since Powershell 3.0 there is also the `Save-Help` cmdlet which can do a bulk download of the manpages of every posh modules installed in a system and `Update-Help` to update it on a separate machine.
+Secondly, until recently there was no easy way to query help for a specific API (for example `Get-ChildItem`). There is evidently the `Get-Help` cmdlet which show the "manpage" associated with the specific cmdlet but that too grab the documentation from the Internet ! At least since Powershell 3.0 there is also the `Save-Help` cmdlet which can do a bulk download of the manpages of every posh modules installed on a system and `Update-Help` to update it on a separate machine.
 
 ![Look Ma ! It's like on a Unix system !](/assets/posh-help-gci.PNG)
 
 
-However I'm not a haxx0r elite programmer and for the life of me I can't spend my time in a text-base console world. I grew up with click-based interfaces and browsers (not necessarly web browsers) therefore I'm way more at ease searching for information in an environment where a ["mistype"](https://en.wiktionary.org/wiki/mistype) cannot do serious damages on the system. I also like to click-click on colored boxes and purple links :smile:
+However I'm not a haxx0r elite programmer and for the life of me I can't spend my time in a text-based console world. I grew up with click-based interfaces and browsers (not necessarly web browsers) therefore I'm way more at ease searching for information in an environment where a ["mistype"](https://en.wiktionary.org/wiki/mistype) cannot do serious damages on the system. I also like to click-click on colored boxes and purple links :smile:
 
-Maybe to alleviate my silent issue (I'm surely not the only one bothered by this), the people from`microsoft.docs` recently launched a Powershell modules browser in which you can do full-text search for Powershell Cmdlet : 
+Maybe to alleviate my silent issue (I'm surely not the only one bothered by this), the people from`microsoft.docs.com` recently launched a Powershell modules browser in which you can do full-text search for Powershell Cmdlet : 
 
 {% raw %}
 
@@ -23,13 +23,13 @@ Maybe to alleviate my silent issue (I'm surely not the only one bothered by this
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endraw %}
 
-This a great improvement but unfortunately it's still online only. However the docs structure is sufficiently simple and well structured to be packaged in a dash docset for offline viewing. What follow in this blog post is how I proceed to build the docset as well as some "tips" for more advanced/obscure topics such as package navigation links and themes support.
+This a great improvement but unfortunately it's still online only. However the docs structure is sufficiently simple and well structured enough to be packaged in a dash docset for offline viewing. What follow in this blog post is how I proceed to build the docset as well as some "tips" for more advanced/obscure topics such as package navigation links and themes support.
 
 
 **TLDR** : the generation script is here [https://github.com/lucasg/powershell-docset](https://github.com/lucasg/powershell-docset) but is subject to regular changes and breakages. Better download only the generated docsets : [https://github.com/lucasg/powershell-docset/releases](https://github.com/lucasg/powershell-docset/releases)
 <!--more-->
 
-The document on how to build a dash-compatbile docset is quite clear and straightforward : [https://kapeli.com/docsets#dashDocset](https://kapeli.com/docsets#dashDocset).
+The document on how to build a dash-compatible docset is quite clear and straightforward : [https://kapeli.com/docsets#dashDocset](https://kapeli.com/docsets#dashDocset).
 
 # Archive structure
 
@@ -52,7 +52,7 @@ we have a layer of metadata on top of arbitrary data :
 
 ```
 
-Documents can contain whatever you want, but usually you want to reproduce the uri path if your doc comes from a website.
+Documents can contain whatever you want, but usually you want to reproduce the url paths if your docs comes from a website.
 In my case :
 
 ```
@@ -127,9 +127,9 @@ download_binary("https://github.com/PowerShell/PowerShell/raw/master/assets/Powe
     <key>DocSetPlatformFamily</key>
     <string>posh</string>
 
-    <!-- not an official docset. I've not seen what it does  -->
+    <!-- Yes for any Dash docset. Otherwise it is treated as an Apple docset  -->
     <key>isDashDocset</key>
-    <false/>
+    <true/>
 
     <!-- enable this if you need to execute some Javascript -->
     <key>isJavaScriptEnabled</key>
@@ -139,13 +139,13 @@ download_binary("https://github.com/PowerShell/PowerShell/raw/master/assets/Powe
 </plist>
 {% endhighlight xml %}
 
-The only tricky item in `Info.plist` is `dashIndexFilePath` : its value must respect the path within `Documents`.
+The only tricky item in `Info.plist` is `dashIndexFilePath` : its value must respect the relative path within `Documents`.
 
-(NB: Duplicate entries in `Info.plist` will make Velocity crash when importing a docset, double check there is none when you create your archive).
+(NB: Duplicate entries in `Info.plist` will make Velocity crash when importing a docset, so double check there is none when you create your archive).
 
 # Crawling website endpoint
 
-There is several way to create a dash docset from existing documentation :
+There is several ways to create a dash docset from existing documentation :
 
 * Generating it from a compatible code comments system (Doxygen, GoDocs, etc) : [Docset Generation Guide](https://kapeli.com/docsets#docsetSources)
 * [docsets generators](https://github.com/zealdocs/zeal/wiki/Third-Party-Resources#docset-generators) such as [dashing](https://github.com/technosophos/dashing) which can automagically create a docset from an existing html documentation using CSS selectors. (Fun fact : dashing is created by a Microsoft Azure guy and written in `Go`. Go figure.)
@@ -153,12 +153,12 @@ There is several way to create a dash docset from existing documentation :
 
 In my case, the Powershell Modules documentation is public and reside here : [https://github.com/PowerShell/PowerShell-Docs](https://github.com/PowerShell/PowerShell-Docs). However the documentation is written in a markup langage suited for [DocFx](https://dotnet.github.io/docfx/), Dotnet documentation generator. DocFx is not dash-compatible yet, so the first option is out.
 
-Theorically, I could have tried to generate the html documentation using `DocFx` and converting it in a docset using `dashing`, but that would have implied to use two tools I don't have experience in and the resulting docset is difficult to debug (as you will see further below) if anything went wrong somewhere. If the Microsoft Azure people want to do it this way, they are more than welcome. So out with the second option.
+Theoretically, I could have tried to generate the html documentation using `DocFx` and converting it in a docset using `dashing`, but that would have implied to use two tools I don't have any experience in and the resulting docset can be difficult to debug (as you will see further below) if anything went wrong somewhere. If the Microsoft Azure people want to do it this way, they are more than welcome. So out with the second option.
 
 Third option it is, then.
 
 
-Forrtunately, as I said previously, the Powershell modules doc website is well structured and provide a json file describing the table of contents : [https://docs.microsoft.com/en-us/powershell/module/powershell-6/toc.json?view=powershell-6](https://docs.microsoft.com/en-us/powershell/module/powershell-6/toc.json?view=powershell-6) (you change the powershell version number for previous major versions). The `toc.json` is basically the sitemap and list all the modules and cmdlets for a given Powershell version.
+Fortunately, as I said previously, the Powershell modules doc website is well structured and provide a json file describing the table of contents : [https://docs.microsoft.com/en-us/powershell/module/psdocs/toc.json?view=powershell-6](https://docs.microsoft.com/en-us/powershell/module/psdocs/toc.json?view=powershell-6) (you change the powershell version number for previous major versions). The `toc.json` is basically the sitemap and list all the modules and cmdlets for a given Powershell version.
 
 Python `urllib` and `requests` are really life savers in those situations : 
 
@@ -238,12 +238,12 @@ db.close()
 {% endhighlight python %}
 <br>
 
-As said in the official documentation, there is a limited of entry "types" : [https://kapeli.com/docsets#supportedentrytypes](https://kapeli.com/docsets#supportedentrytypes). Even though Microsoft keeps on using `Cmdlet` to designate Powershell commands I've listed them under the "Command" entry type.
+As said in the official documentation, there is a limited number of entry "types" : [https://kapeli.com/docsets#supportedentrytypes](https://kapeli.com/docsets#supportedentrytypes). Even though Microsoft keeps on using `Cmdlet` to designate Powershell commands I've listed them under the "Command" entry type.
 
 
 # Packaging the docset
 
-Once you've got every html source files and you've populated the databse, just tar-gz the folder while conserving the structure within the archive (relative path folders). 
+Once you've got every html source files and you've populated the database, just tar-gz the folder while conserving the structure within the archive (relative path folders). 
 This python snippet does the trick :
 
 {% highlight python %}
@@ -291,13 +291,13 @@ There is also a fuckton a nav bars , dropdown menu and sidebars DOM elements tha
 
 
 
-With working uri paths your docset is more "dynamic" and "discoverable", but it's still fugly. I don't know for `Dash` but `Velocity` and `Zeal` are basically web browsers (`Zeal` use `QtWebEngine` and `Velcity` relies on the `Chromium Embedded Framework`) so it's possible to "theme" your docset via css.
+With working uri paths your docset is more "dynamic" and "discoverable", but it's still fugly. I don't know for `Dash` but `Velocity` and `Zeal` are basically web browsers (`Zeal` use `QtWebEngine` and `Velocity` relies on the `Chromium Embedded Framework`) so it's possible to "theme" your docset via css.
 
 Problem though, the css theme location is not present in the `toc.json` file so you need to find it on your own. That's where Chrome/Firefox/Edge's devtools are your friend :
 
 ![Chrome Devtools's Source pane](/assets/posh-docs-microsoft-sources-tree.PNG)
 
-You will to reconstruct the exact same tree directory structure in your docset package and also fix urls. I fortunately didn't had to replicate the cross-domain "cdn" requests. "Dynamic" pages like powershell `index.html` rely on Javascript to defer resource loading and some DOM elements are lazy-loaded via `Promise`. In order to locate and retrieve all the necessary resources I end up using a `webdriver` (`selenium` + `phantomjs`) which is a headless web browser you can automate. This is way slower than using simple HTTP requests, but the result is more accurate.
+You will need to reconstruct the exact same tree directory structure in your docset package and also fix urls. I fortunately didn't had to replicate the cross-domain "cdn" requests. "Dynamic" pages like powershell `index.html` rely on Javascript to defer resource loading and some DOM elements are lazy-loaded via a `Promise`. In order to locate and retrieve all the necessary resources I end up using a `webdriver` (`selenium` + `phantomjs`) which is a headless web browser you can automate. This is way slower than using simple HTTP requests, but the result is more accurate.
 
 Follow below is the result with the css theme correctly applied. That's much nicer to see !
 
@@ -306,7 +306,7 @@ Follow below is the result with the css theme correctly applied. That's much nic
 
 # Overengineering the whole process
 
-I've set up a `_travis.yml` script that allow me to generate docsets a new commit, as well as push them on my Github releases' repository. `Travis` is also set to regularly fire a build ("`cron` job") in order to keep a "up-to-date" build.
+I've set up a `_travis.yml` script that allow me to generate docsets on a new commit, as well as push them on my Github releases' repository. `Travis` is also set to regularly fire a build ("`cron` job") in order to keep a "up-to-date" build.
 
 {% highlight html  %}
 language: python
@@ -351,4 +351,4 @@ script:
 
 
 <br>
-I even went as far as envisaging using [backstroke.us](http://backstroke.us) to monitor/sync `https://github.com/Powershell/PowerShell-Docs` and trigger a travis scraping job on a new commit in order to always have up-to-date documentation. But on second though I think that's a bit overboard for a weekeend side project.
+I even went as far as envisaging using [backstroke.us](http://backstroke.us) to monitor/sync `https://github.com/Powershell/PowerShell-Docs` and trigger a travis scraping job on a new commit in order to always have an up-to-date documentation. But on second though I think that's a bit overboard for a simple weekend side project.
