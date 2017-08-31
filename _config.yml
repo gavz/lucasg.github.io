@@ -9,8 +9,8 @@ permalink:        pretty
 title:            lucasg.github.io
 tagline:          blog
 paginate:         1
-url:          	  http://lucasg.github.io
-baseurl:          http://lucasg.github.io/
+url:          	  https://lucasg.github.io
+baseurl:          https://lucasg.github.io/
 author:
   name:           lucasg
   email:          lucas.georges@outlook.com
