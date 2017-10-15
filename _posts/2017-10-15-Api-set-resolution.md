@@ -8,7 +8,7 @@ date: 2017-10-15
 
 All I know (before writing this post) is to solve a missing api min-win, you usually rely on copying the whole redist folder when deploying a statically compiled binary and calling it a day : 
 
-![Can you find which application does that ?](/assets/apiset-copy.PNG)
+{% include image.html url="/assets/apiset-copy.PNG" description="Can you find which application does that ?" %}
 
 Fortunately, [third-party research]({{page.url}}#References) covers pretty much everything you need to know the subject. However, I had to write an api set resolver for the [Dependencies application](https://lucasg.github.io/Dependencies) I've been working on this year. Following in this post is how the NT loader resolve an api set library.
 
