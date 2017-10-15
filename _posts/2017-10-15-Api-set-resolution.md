@@ -4,7 +4,7 @@ title: "Api set resolution"
 date: 2017-10-15
 ---
 
-[Windows API Sets schema](https://msdn.microsoft.com/en-us/library/windows/desktop/hh802935(v=vs.85).aspx) is a weird dll redirection mechanism Microsoft introduced in Win7 (and perfected in Win8.1) but no one really know why it's useful. What's more there is little to none official documentation on the subject (and it's not even up to date) which makes me think MS don't really want to officially support the schema.
+[Windows API Sets schema](https://msdn.microsoft.com/en-us/library/windows/desktop/hh802935(v=vs.85).aspx) is a weird dll redirection mechanism  Microsoft introduced in Win7 (and perfected in Win8.1) but no one really know why it's useful. What's more there is little to none official documentation on the subject (and it's not even up to date) which makes me think MS don't really want to officially support the schema.
 
 All I know (before writing this post) is to solve a missing api min-win, you usually rely on copying the whole redist folder when deploying a statically compiled binary and calling it a day : 
 
@@ -25,7 +25,7 @@ As said previously, the api set schema (and its evolution along Windows versions
 
 ![.apiset section data](/assets/apiset-section.PNG)
 
-This section is actually present in every process via the PEB (probably using a COW mechanism). :
+This section is actually present in every process via the PEB (probably using a COW mechanism ). :
 
 ![.apiset section data address in the PEB](/assets/apiset-peb.PNG)
 
@@ -263,13 +263,16 @@ Since the returned entry may reference multiple hosts library (apparently that's
 {% endhighlight C %}
 
 
-`ApiSetResolveToHost` is the function wrapping the other previous two in order to "hide" the hash table implementation details from the point a view of a third-party developer (being here a MS dev since none of this mecanism is officially accessible). The only singular points are :
+`ApiSetResolveToHost` is the function wrapping the other previous two in order to "hide" the hash table implementation details from the point a view of a third-party developer (being here a MS dev since none of this mechanism is officially accessible). The only singular points are :
 
-* they checked the apiset library name is actually prefixed by `"api-"` or `"ext-"`
-* the apiset library name is truncated before being fed to `ApiSetpSearchForApiSet` : they get rid of the `".dll"` extension (which is a just an application hint) and everything after the last hyphen. That's understandable : after the last hyphen is the "build" version, and supporting a strict comparison of apiset library name would make the ApiSet Map size explode. 
+* `ApiSetResolveToHost` checks the apiset library name is actually prefixed by `"api-"` or `"ext-"`
+* the apiset library name is truncated before being fed to `ApiSetpSearchForApiSet` : it get rid of the `".dll"` extension (which is a just an application hint) and everything after the last hyphen. That's actually understandable : after the last hyphen is the "build" version, and supporting a strict comparison of apiset library name would make the ApiSet Map size explode. 
 
  
 {% highlight C %}
+  
+  const uint64_t API_ = (uint64_t)0x2D004900500041; // L"api-"
+  const uint64_t EXT_ = (uint64_t)0x2D005400580045; // L"ext-";
 
   NTSTATUS 
   __fastcall ApiSetResolveToHost(
