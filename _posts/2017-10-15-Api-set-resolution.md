@@ -15,9 +15,11 @@ Fortunately, [third-party research]({{page.url}}#References) covers pretty much 
 <!--more-->
 
 
-Api sets dll are "virtual libraries" actually implementing only contract APIs which will be resolved by the NT loader. According to [Ionescu's Esoteric Hooks presentation](https://github.com/ionescu007/HookingNirvana/raw/master/Esoteric%20Hooks.pdf) the official aim is to decouple 'API' features (heap allocations, strings manipulations, etc.) from subsystem implementations (enumerating processes, registering services, etc.). I'm pretty sure this is also another step into getting rid of the undying cockroach that is the Win32 subsystem in Windows desktops. Anyway, api set schema is probably what made [UWP apps](https://docs.microsoft.com/en-us/windows/uwp/get-started/whats-a-uwp) possible.
+Api sets dll are "virtual libraries" actually implementing only contract APIs which will be resolved by the NT loader. According to [Ionescu's Esoteric Hooks presentation](https://github.com/ionescu007/HookingNirvana/raw/master/Esoteric%20Hooks.pdf) the official aim is to decouple 'API' features (heap allocations, strings manipulations, etc.) from subsystem implementations (enumerating processes, registering services, etc.). I'm pretty sure this is also another step into getting rid of the undying cockroach that is the Win32 subsystem in Windows desktops. Anyway, api set schema is probably what made [UWP apps](https://docs.microsoft.com/en-us/windows/uwp/get-started/whats-a-uwp) possible :
 
-As said previously, the api set schema (and its evolution along Windows versions) has already been reversed and publicly documented, so I'll just a quick recap on it's actual implementation.
+![that's actually from the MS patent on the subject](/assets/apiset-patent.PNG)
+
+As said previously, the api set schema (and its evolution along Windows versions) has already been reversed and publicly documented, so I'll just do a quick recap on it's actual implementation.
 
 `%Windir%\System32\apisetschema.dll` is the dll implementing the contract resolution between virtual api-min-win dlls and host libraries in its `.apiset` section :
 
