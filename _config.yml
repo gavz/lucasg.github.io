@@ -14,11 +14,7 @@ baseurl:          https://lucasg.github.io/
 author:
   name:           lucasg
   email:          lucas.georges@outlook.com
-  github:         lucasg
 
-# Custom vars
-version:          1.0.0
-github:		  [metadata]
 
 # to recreate the "site.github" locally
 repository: lucasg/lucasg.github.io
