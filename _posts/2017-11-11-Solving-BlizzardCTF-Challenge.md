@@ -15,9 +15,10 @@ By clicking 4 times on the window, it launch a modal dialog box telling me the s
 
 ![](/assets/Incorrect.PNG)
 
-The executable is a nicely looking C# application, one which [DotPeek]() likes to decompile. After some reversing, I've located the verification and `MessageBox` launch functions :
+The executable is a nicely looking C# application, one which [DotPeek](https://www.jetbrains.com/decompiler/) likes to decompile. After some reversing, I've located the verification and `MessageBox` launch functions :
 
 
+![](/assets/timer2_Tick.PNG)
 
 The verification function pop `this.m_coll`, convert them to hex string and concatenate it into a single hex string array. Then it call `<Module>.native_verify`. `<Module>.native_verify` is not referenced anywhere in DotPeek's decompiled code which makes probably a C++/CLI code resolved by a hand-written loader. Instead of trying to locate and reverse the loader, it's easier to trace it using a debugger.
 
