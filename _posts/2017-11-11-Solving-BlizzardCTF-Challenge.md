@@ -15,14 +15,14 @@ By clicking 4 times on the window, it launch a modal dialog box telling me the s
 
 ![](/assets/Incorrect.PNG)
 
-The executable is a nicely looking C# application, one which [DotPeek](https://www.jetbrains.com/decompiler/) likes to decompile. After some reversing, I've located the verification and `MessageBox` launch functions :
+The executable is a nicely looking C# application, one which [DotPeek](https://www.jetbrains.com/decompiler/) likes to decompile. After some reversing, I've located the verification and `MessageBox` launch function :
 
 
 ![](/assets/timer2_Tick.PNG)
 
-The verification function pop `this.m_coll`, convert them to hex string and concatenate it into a single hex string array. Then it call `<Module>.native_verify`. `<Module>.native_verify` is not referenced anywhere in DotPeek's decompiled code which makes probably a C++/CLI code resolved by a hand-written loader. Instead of trying to locate and reverse the loader, it's easier to trace it using a debugger.
+The timer routine pop `this.m_coll` items (representing the clicks coordinates), convert them to hex string and concatenate it into a single hex string array. Then it call `<Module>.native_verify`. `<Module>.native_verify` is not referenced anywhere in DotPeek's decompiled code and the fact that "native" is in the function name probably points to some C++/CLI code embedded in the executable and resolved by a hand-written loader. Instead of trying to locate and reverse the loader, it's easier to trace it using a debugger.
 
-Fortunately, Windbg can debug C# managed code along with traditionnal native C/C++ code thanks to the `sos` extension. If you want to know more about it, [this blog hosts every info you need to know about it](https://blogs.msdn.microsoft.com/alejacma/tag/debugging/).
+Fortunately, Windbg can debug C# managed code along with traditionnal native C/C++ code thanks to the `sos` extension. If you want to know more about managed debugging, [this blog hosts every info you need to know about it](https://blogs.msdn.microsoft.com/alejacma/tag/debugging/).
 
 {% highlight text %}
 
@@ -91,7 +91,7 @@ Transparency: Safe critical
 {% endhighlight text %}
 
 
-The issue with debugging C# code is the presence of JIT : unused parts of the application is not "present" (instruction-wise) until the execution hits it, kinda like `MEM_COMMIT` virtual memory is not actually backed by physical memory until a access memory triggers a `#PF`. To overcome this issue, just try to run the target function at least once :
+The issue with debugging C# code is the presence of JIT : unused functions are not compiled to native code instructions until the code flow hits them. JIT mecanism resemble to the lazy page allocation for virtual memory : `MEM_COMMIT` virtual memory is not actually backed by physical memory until a access memory triggers a `#PF`. To overcome this issue, I need to actually trigger the `timer2_Tick` at least once :
 
 {% highlight text %}
 0:009> g
@@ -139,13 +139,13 @@ Now we can break on `<Module>.native_verify` and examine what's going on behind 
 
 ![Yeah I know we don't see shit](/assets/native_verify.PNG)
 
-Screenshots of IDA graph view are not the best explaining tool so I've schematized the function flow graph :
+Screenshots of IDA graph view are not the best tool for explaining control flow so I've schematized the function flow graph :
 
 ![That's actually better](/assets/natives_verify_schema.png)
 
 
 
-There are two "external" calls inside this function (as in IDA cannot resolve the address) that need to be resolved. The first one is simply a call to `wscncpy`, but the second one actually does the final verification resulting in a OK/KO return code. IDA cannot resolve the address since the function is located in a JIT page :
+There are two "external" calls inside this function (as in IDA cannot locate the address) that need to be resolved. The first one is simply a call to `wscncpy`, but the second one actually does the final verification resulting in a OK/KO return code. IDA cannot resolve the address since the function is located in a JIT page :
 
 
 ![tracking down jit code](/assets/jit_page.PNG)
@@ -242,7 +242,7 @@ HexRays decompiled code is not really human readable, but it does not matter sin
 
 ![That's actually better](/assets/natives_verify_schema.png)
 
-What's interesting in the verification function is everything coming after the `malloc` instruction depends only on the 32-bit computed "seed" integer which is derived from the input strings representing the clicks' coordinates. That means we can try to bruteforce seed values that we return a correct value. After some HexRays and a ad-hoc C program, I found the following valid seed value : `0x33746715`. 
+What's interesting in the verification function is everything coming after the `malloc` instruction depends only on the 32-bit computed "seed" integer which is derived from the input strings representing the clicks' coordinates. That means we can try to bruteforce seed values until it returns a correct value. After some HexRays and a ad-hoc C program, I found the following valid seed value : `0x33746715`. 
 
 Not shown in the schema, but every click coordinates account for only one byte of the computed 32-bit seed value, so we can try to find matching coordinates for each byte of our valid seed : 
 
@@ -321,7 +321,9 @@ if __name__=='__main__':
 When running the clicker, I got the following modal box : 
 
 
-![](/assets/Success.PNG)
+![That was underwhelming](/assets/Success.PNG)
+
+That was a really neat challenge, which can be quite difficult if you're not knowledgeable about C# reversing and C#/C++ Windbg managed debugging. As a side note, I think it's probably possible to black box bruteforce the challenge since every click need to be placed on a 25 pt radius around a particular point which makes a total of `(50*2)**4=100000000` combinations for the 4 clicks. You just need to use an automated clicker (autoit or my python script) and one or two correctly placed breakpoints for some guiding feedback.
 
 <br>
 <br>
