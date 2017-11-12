@@ -20,9 +20,13 @@ author:
 version:          1.0.0
 github:		  [metadata]
 
+# to recreate the "site.github" locally
+repository: lucasg/lucasg.github.io
+
 excerpt_separator: <!--more-->
 
 # gems
 gems:
   - jekyll-feed
   - jemoji
+  - jekyll-github-metadata
