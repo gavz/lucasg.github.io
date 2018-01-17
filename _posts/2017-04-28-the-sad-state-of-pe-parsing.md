@@ -18,7 +18,7 @@ If there is one thing the Open Source ™ has done right, it's to be able to con
 * `ffmpeg`, `libav`, `libvpx`  for audio/video 
 * etc.
 
-However there is none for decoding and manipulating binairies, especially `PE` binaries.
+However there is none for decoding and manipulating binaries, especially `PE` binaries.
 
 There is a trove of commercial software for `PE` features extraction (`PEStudio`, `CFF Explorer`, `PE Insider`, `PE explorer`, `Ida`, `010 editor` with community-sourced parsers, `PEview`) as well as closed source freeware (`depends`, `dumpbin`, `windbg`) there is actually no leading open-source library for `PE` parsing.
 
@@ -27,7 +27,7 @@ That's weird since I think every reverse engineer and Windows security specialis
 That's doubly weird that, in this day and age, no AV companies decided to pool resources in order to ship an secure open-source library (like hardware vendors did for `Linux`). I'm pretty sure every AV engine on Windows embed in some way a `PE` parser, even partially.  
 
 
-I recently wanted to extract features from a set of binairies in a scriptable way. However, I needed for the script to be fully autonomous (i.e. I could drop it on an external system and run it). Here's the options I found :
+I recently wanted to extract features from a set of binaries in a scriptable way. However, I needed for the script to be fully autonomous (i.e. I could drop it on an external system and run it). Here's the options I found :
 
 * `Python` : `pefile` (for `PE` parsing) + `pyexe/freeze/etc.` in order to create a static runtime. I've been previously been burned by subtle ``pyexe` to not wanting to goin that direction again
 * `Javascript` : `PE.js` for `PE` parsing. Problem : the only way I think of creating a static runtime out of it is to compile and deploy a custom version of `V8/SpyderMonkey/Chackra` or go full way and build an `Electron` application.
@@ -45,7 +45,7 @@ Since there was no satisfying solution (at least to me) I decided to go the `C` 
 * [`quarkslab/leif`](https://lief.quarkslab.com/) : the new kid one the `PE` parsing block. However I did not managed to compile it on Windows (it redefine as C++ enums name that macro-defined in `Windows` WDK like `IMAGE_FILE_MACHINE_AMD64`). After two hours of trying, my patience ran short.
 * [`ProcessHacker\phlib`](https://github.com/processhacker2/processhacker) : ProcessHacker actually implement a pretty feature wide `PE` parser in its library `phlib`.
 
-Since I've previously worked on `ProcessHacker` and I was somewhat familiar with the codebase, I decided to give it a shot. Surprinsingly enough, it was easy to rip the necessary code : just copy `phlib` and `phnt` (headers only)  folders in your project root dir and as long as you compile as a static runtime, you're set.
+Since I've previously worked on `ProcessHacker` and I was somewhat familiar with the codebase, I decided to give it a shot. Surprisingly enough, it was easy to rip the necessary code : just copy `phlib` and `phnt` (headers only)  folders in your project root dir and as long as you compile as a static runtime, you're set.
 
 Anyway, I'm working on removing bugs in `phlib` whenever I found some :
 

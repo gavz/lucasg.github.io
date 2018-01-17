@@ -22,7 +22,7 @@ The executable is a nicely looking C# application, one which [DotPeek](https://w
 
 The timer routine pop `this.m_coll` items (representing the clicks coordinates), convert them to hex string and concatenate it into a single hex string array. Then it call `<Module>.native_verify`. `<Module>.native_verify` is not referenced anywhere in DotPeek's decompiled code and the fact that "native" is in the function name probably points to some C++/CLI code embedded in the executable and resolved by a hand-written loader. Instead of trying to locate and reverse the loader, it's easier to trace it using a debugger.
 
-Fortunately, Windbg can debug C# managed code along with traditionnal native C/C++ code thanks to the `sos` extension. If you want to know more about managed debugging, [this blog hosts every info you need to know about it](https://blogs.msdn.microsoft.com/alejacma/tag/debugging/).
+Fortunately, Windbg can debug C# managed code along with traditional native C/C++ code thanks to the `sos` extension. If you want to know more about managed debugging, [this blog hosts every info you need to know about it](https://blogs.msdn.microsoft.com/alejacma/tag/debugging/).
 
 {% highlight text %}
 
@@ -91,7 +91,7 @@ Transparency: Safe critical
 {% endhighlight text %}
 
 
-The issue with debugging C# code is the presence of JIT : unused functions are not compiled to native code instructions until the code flow hits them. JIT mecanism resemble to the lazy page allocation for virtual memory : `MEM_COMMIT` virtual memory is not actually backed by physical memory until a access memory triggers a `#PF`. To overcome this issue, I need to actually trigger the `timer2_Tick` at least once :
+The issue with debugging C# code is the presence of JIT : unused functions are not compiled to native code instructions until the code flow hits them. JIT mechanism resemble to the lazy page allocation for virtual memory : `MEM_COMMIT` virtual memory is not actually backed by physical memory until a access memory triggers a `#PF`. To overcome this issue, I need to actually trigger the `timer2_Tick` at least once :
 
 {% highlight text %}
 0:009> g
@@ -151,7 +151,7 @@ There are two "external" calls inside this function (as in IDA cannot locate the
 ![tracking down jit code](/assets/jit_page.PNG)
 
 
-Fortunately, IDA can import JIT pages as additionnal binaries and resolve functions calls based on base address. Inserting the function into allow me to decompile it using HexRays : 
+Fortunately, IDA can import JIT pages as additional binaries and resolve functions calls based on base address. Inserting the function into allow me to decompile it using HexRays : 
 
 
 {% highlight C %}

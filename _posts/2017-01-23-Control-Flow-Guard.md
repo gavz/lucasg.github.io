@@ -135,7 +135,7 @@ If you try to indirectly call a `CFG` approved target containing a `SuppressedCa
 
 From this list we can infer most of them either have a direct impact on the way `CFG` is implemented (`SetProcessValidCallTargets`, `SetProtectedPolicy`, `RtlSetProtectedPolicy`) or are legit control flow mechanisms (`RaiseException`, `RtlRestoreContextStub`, `SwitchToFiber`, `longjmp`). 
 
-It is understable that these "dangerous" functions should be allowed to be called indirectly, but they should be deactivated by default. The function which explicitely activate the call target is `ntdll!RtlpGuardGrantSuppressedCallAccess` and for obvious reasons is not `CFG` whitelisted.
+It is understable that these "dangerous" functions should be allowed to be called indirectly, but they should be deactivated by default. The function which explicitly activate the call target is `ntdll!RtlpGuardGrantSuppressedCallAccess` and for obvious reasons is not `CFG` whitelisted.
 
 The `GuardCFFunctionTable` and `SuppressedCall` header flag parsing has been added to Process Hacker's `peview.exe` executable [(Github PR)](https://github.com/processhacker2/processhacker2/pull/101):
 
@@ -177,7 +177,7 @@ With `CFG`, Microsoft and the Windows team has done a tremendous job of raising 
 
 One thing to mention is `CFG` is the second mitigation technique taking advantage of the fact that Windows is an integrated environment, the first being `KASLR`. It is interesting from a "marketing" point of view : `CFG` can not be easily ported in a `linux` since there is a myriad of C CRT running in the same userland. We might see more mitigations techniques based on this uniqueness in the future.
 
-Alas, `CFG` is not the perfect mitigiation technique (none really are). Firstly it only check the call target, not the call arguments. Secondly, the backward compatbility legacy code does not benifit from `CFG` until they are re-compiled by a compiler >= VS2015. Lastly, there are already some `CFG` bypass publicly present on the Internet : [https://medium.com/@mxatone/mitigation-bounty-4-techniques-to-bypass-mitigations-2d0970147f83#.a5oytwbnq](@mxatone/mitigation-bounty-4-techniques-to-bypass-mitigations). 
+Alas, `CFG` is not the perfect mitigiation technique (none really are). Firstly it only check the call target, not the call arguments. Secondly, the backward compatibility legacy code does not benefit from `CFG` until they are re-compiled by a compiler >= VS2015. Lastly, there are already some `CFG` bypass publicly present on the Internet : [https://medium.com/@mxatone/mitigation-bounty-4-techniques-to-bypass-mitigations-2d0970147f83#.a5oytwbnq](@mxatone/mitigation-bounty-4-techniques-to-bypass-mitigations). 
 
 
 Maybe in the future a new type of generic bypass will be invented (like `ROP` for `DEP`) but actually all the existing bypass relies on pretty strong hypothesis (`CLR` module loaded, etc.). Here is the take of a `pwn2own` winner on current NT kernel security state and post-CFG exploitation : [http://www.slideshare.net/PeterHlavaty/you-didnt-see-its-coming-dawn-of-hardened-windows-kernel](you-didnt-see-its-coming-dawn-of-hardened-windows-kernel)

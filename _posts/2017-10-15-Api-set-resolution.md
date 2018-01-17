@@ -84,7 +84,7 @@ The ApiSet resolution is implemented in 3 non exported functions in the `ntdll` 
 * `ApiSetpSearchForApiSetHost` which can discriminate dll when an apiset library has several "hosts" libraries (not a frequent case).
 
 
-`ApiSetpSearchForApiSet` is a pretty traditionnal hash table getter. Since hash buckets may collide, there is an additional check on the apiset library name returned by the hash table : 
+`ApiSetpSearchForApiSet` is a pretty traditional hash table getter. Since hash buckets may collide, there is an additional check on the apiset library name returned by the hash table : 
 
 {% highlight C %}
 

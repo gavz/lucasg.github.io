@@ -7,7 +7,7 @@ date: 2017-01-07
 Recently I've stumble upon the following question on Stack Overflow : <a href ="http://stackoverflow.com/questions/36712801/windows-10-naming-programs-main-exe-cause-them-to-show-pop-up">windows-10-naming-programs-main-exe-cause-them-to-show-pop-up</a>. The user ```Ether Frog``` has noticed that renaming any executable to ```main.exe``` triggers the Xbox Game DVR recorder when launching the executable on Windows 10.
 
 
-I've done some digging over the weekend and I have found over 2000 special exe names which will trigger the same behaviour, not just ```main.exe```.
+I've done some digging over the weekend and I have found over 2000 special exe names which will trigger the same behavior, not just ```main.exe```.
 
 This post does contain most of my answer on the SO platform, but I also explain my reverse engineering process.
 
@@ -16,7 +16,7 @@ This post does contain most of my answer on the SO platform, but I also explain 
 <br>
 
 
-After confirming the quirky behaviour on my machine, I spin up ```Process Hacker``` (fantastic software by the way) to get additional informations on the Xbox popup. That's where it gets tricky : the popup is a modal that disappear whenever it lose focus. Which means every time I click somewhere in the ```Process Hacker``` GUI, the XBox process exit.
+After confirming the quirky behavior on my machine, I spin up ```Process Hacker``` (fantastic software by the way) to get additional informations on the Xbox popup. That's where it gets tricky : the popup is a modal that disappear whenever it lose focus. Which means every time I click somewhere in the ```Process Hacker``` GUI, the XBox process exit.
 
 ![I kinda cheated to create this snapshot, can you see how ?](/assets/ProcHackerSnapshot.png)
 
@@ -339,7 +339,7 @@ I've written a [010 template file](#010-template) to parse the entry list  and i
 * the more complex one where there is a match on the executable name and the path where the exe is stored must contains some strings. <br>
   For example : ```acu.exe``` must be located in a subfolder of ```Assassin's Creed Unity```.
 
-* Some entries have additionals strings to match, but I haven't found how to trigger the game DVR popup for them.
+* Some entries have additional strings to match, but I haven't found how to trigger the game DVR popup for them.
 
 
 Back in `twinui` there is a whole class called `CQueryKnownGameList` which happen to open this very file (and some others in order to update the list).  `TwinUI!CQueryKnownGameList::GetGameEntryByIdentifier`  and `TwinUI!CQueryKnownGameList::GetTOCIndexByIdentifier` are called whenever a new executable (there is a lookup cache mechanism) is launched. In the latter function there is a case-insensitive string comparison made by `wcsnicmp` between the process name and the entry name.
@@ -361,7 +361,7 @@ Moreover, only the `TrustedInstaller` "user" (as the way Windows defines it) has
 
 ![You trust TrustedInstaller, do you ?](/assets/GamePanelRegKeyAuth.PNG)
 
-(I did not found an authorative link from the msdn for registry hives auths, so here a SO answer confirming it : <a href="http://stackoverflow.com/questions/53135/what-registry-access-can-you-get-without-administrator-privleges"> what-registry-access-can-you-get-without-administrator-privleges </a> )
+(I did not found an authorative link from the msdn for registry hives auths, so here a SO answer confirming it : <a href="http://stackoverflow.com/questions/53135/what-registry-access-can-you-get-without-administrator-privleges"> what-registry-access-can-you-get-without-administrator-privileges </a> )
 
 
 ##  <a name="010-template"></a> 010 template :

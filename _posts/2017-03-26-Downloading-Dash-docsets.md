@@ -4,7 +4,7 @@ title: "Downloading dash docsets"
 date: 2017-02-05
 ---
 
-`Dash` docsets and the compatible viewers (`Dash` on OSX, `Velocity` on Windows and `Zeal` on Linux/X-Plat) are a godsend for whoever work/develop offline (or on a limited bandwith). It also has the benefit of being a one-stop shop for documentation (no need to have multiple tabs opened for `$ProgrammingLanguage`; `$BuildPipelineTechno`; `$VersionControlSoftware`; etc.).
+`Dash` docsets and the compatible viewers (`Dash` on OSX, `Velocity` on Windows and `Zeal` on Linux/X-Plat) are a godsend for whoever work/develop offline (or on a limited bandwidth). It also has the benefit of being a one-stop shop for documentation (no need to have multiple tabs opened for `$ProgrammingLanguage`; `$BuildPipelineTechno`; `$VersionControlSoftware`; etc.).
 
 ![Velocity](/assets/Velocity.PNG)
 
@@ -57,7 +57,7 @@ with open("urlist.json", "r") as docset_json :
 The `reporthook` callback function is something I have copied from [StackOverflow](http://stackoverflow.com/questions/13881092/download-progressbar-for-python-3) in order to have a download progress bar (some docsets weight more than 100 MB). In the end the whole official docset list is around 9 GB.
 
 
-If you're using `Velocity` or `Dash` regularly, I encourage you to buy a license (moreso if you're using it professionnally). Each application is the work of a single developper, and probably their daily breadwinner. I know I intend to buy a license, if only to be able to send features requests. 
+If you're using `Velocity` or `Dash` regularly, I encourage you to buy a license (moreso if you're using it professionally). Each application is the work of a single developer, and probably their daily breadwinner. I know I intend to buy a license, if only to be able to send features requests. 
 
 My only gripes so far with `Velocity` (I haven't tried `Dash`) :
 

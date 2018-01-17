@@ -28,14 +28,14 @@ the `KnownDlls` mechanism has been introduced in 2006 by [`KB 164501`](https://s
 
 In order to list all the dll considered `KnownDlls`, I had to read some documentation. As always, there is a pertinent blog post on the msdn network :[ https://blogs.msdn.microsoft.com/larryosterman/2004/07/19/what-are-known-dlls-anyway](https://blogs.msdn.microsoft.com/larryosterman/2004/07/19/what-are-known-dlls-anyway).
 
-According to the author, if some dlls are "statically" listed as `KnownDlls` in the registry key `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SessionManager\KnownDLLs`, it does not return the entire list of librairies since all the dlls loaded by a `KnownDll` is also a `KnownDll`. In order to "dynamically" list all the `KnownDlls`, we need to list all the sections under `\KnownDlls` (for 64-bit dlls) and/or `\KnownDlls32` (for wow64-bit dlls).
+According to the author, if some dlls are "statically" listed as `KnownDlls` in the registry key `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SessionManager\KnownDLLs`, it does not return the entire list of libraries since all the dlls loaded by a `KnownDll` is also a `KnownDll`. In order to "dynamically" list all the `KnownDlls`, we need to list all the sections under `\KnownDlls` (for 64-bit dlls) and/or `\KnownDlls32` (for wow64-bit dlls).
 
 
 # Listing files from a directory handle
 
 Problem : `\KnownDlls` is a "special" directory since it's not really present on disk's FS. 
 
-The first implication is `FindFirstFile`/`FindNextFile` won't work, since it rely on `\KnownDlls` being a traditionnal folder. 
+The first implication is `FindFirstFile`/`FindNextFile` won't work, since it rely on `\KnownDlls` being a traditional folder. 
 Nevertheless we can get a directory handle on `\KnownDlls` via `CreateFile` (via the `FILE_FLAG_BACKUP_SEMANTICS` flag). However the available API to manipulate directory handles are quite poor :
 
 	* BackupRead 	

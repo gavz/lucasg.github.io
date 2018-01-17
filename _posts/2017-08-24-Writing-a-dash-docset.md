@@ -4,14 +4,14 @@ title: "Writing a custom dash docset for Powershell docs"
 date: 2017-08-24
 ---
 
-Powershell has became the default shell since Windows 10 Creator's Update and it's starting to become more than just a framework for malware deployment ([not my words](https://twitter.com/MalwareTechBlog/status/891005091985203201)). Apart from the langage itself which feel alien to me (is it a shell ? a scripting langage ? a programming langage ? a duck ?) my biggest gripe with Powershell is the lack of documentation accessible from an offline network (or simply without direct access to the Internet). For a shell that have been created for sysadmins, you would imagine MS would have thought of shipping Powershell with "batteries included". I can not count the amount of times I needed to do a powershell-related search on my smartphone while operating on a detached network.
+Powershell has became the default shell since Windows 10 Creator's Update and it's starting to become more than just a framework for malware deployment ([not my words](https://twitter.com/MalwareTechBlog/status/891005091985203201)). Apart from the language itself which feel alien to me (is it a shell ? a scripting language ? a programming language ? a duck ?) my biggest gripe with Powershell is the lack of documentation accessible from an offline network (or simply without direct access to the Internet). For a shell that have been created for sysadmins, you would imagine MS would have thought of shipping Powershell with "batteries included". I can not count the amount of times I needed to do a powershell-related search on my smartphone while operating on a detached network.
 
 Secondly, until recently there was no easy way to query help for a specific API (for example `Get-ChildItem`). There is evidently the `Get-Help` cmdlet which show the "manpage" associated with the specific cmdlet but that too grab the documentation from the Internet ! At least since Powershell 3.0 there is also the `Save-Help` cmdlet which can do a bulk download of the manpages of every posh modules installed on a system and `Update-Help` to update it on a separate machine.
 
 ![Look Ma ! It's like on a Unix system !](/assets/posh-help-gci.PNG)
 
 
-However I'm not a haxx0r elite programmer and for the life of me I can't spend my time in a text-based console world. I grew up with click-based interfaces and browsers (not necessarly web browsers) therefore I'm way more at ease searching for information in an environment where a ["mistype"](https://en.wiktionary.org/wiki/mistype) cannot do serious damages on the system. I also like to click-click on colored boxes and purple links :smile:
+However I'm not a haxx0r elite programmer and for the life of me I can't spend my time in a text-based console world. I grew up with click-based interfaces and browsers (not necessarily web browsers) therefore I'm way more at ease searching for information in an environment where a ["mistype"](https://en.wiktionary.org/wiki/mistype) cannot do serious damages on the system. I also like to click-click on colored boxes and purple links :smile:
 
 Maybe to alleviate my silent issue (I'm surely not the only one bothered by this), the people from`microsoft.docs.com` recently launched a Powershell modules browser in which you can do full-text search for Powershell Cmdlet : 
 
@@ -52,7 +52,7 @@ we have a layer of metadata on top of arbitrary data :
 
 ```
 
-Documents can contain whatever you want, but usually you want to reproduce the url paths if your docs comes from a website.
+Documents can contain whatever you want, but usually you want to reproduce the URL paths if your docs comes from a website.
 In my case :
 
 ```
@@ -151,9 +151,9 @@ There is several ways to create a dash docset from existing documentation :
 * [docsets generators](https://github.com/zealdocs/zeal/wiki/Third-Party-Resources#docset-generators) such as [dashing](https://github.com/technosophos/dashing) which can automagically create a docset from an existing html documentation using CSS selectors. (Fun fact : dashing is created by a Microsoft Azure guy and written in `Go`. Go figure.)
 * Custom creating one with lots of scraping, copious amounts of sweat and a bit of luck/skill.
 
-In my case, the Powershell Modules documentation is public and reside here : [https://github.com/PowerShell/PowerShell-Docs](https://github.com/PowerShell/PowerShell-Docs). However the documentation is written in a markup langage suited for [DocFx](https://dotnet.github.io/docfx/), Dotnet documentation generator. DocFx is not dash-compatible yet, so the first option is out.
+In my case, the Powershell Modules documentation is public and reside here : [https://github.com/PowerShell/PowerShell-Docs](https://github.com/PowerShell/PowerShell-Docs). However the documentation is written in a markup language suited for [DocFx](https://dotnet.github.io/docfx/), Dotnet documentation generator. DocFx is not dash-compatible yet, so the first option is out.
 
-Theoretically, I could have tried to generate the html documentation using `DocFx` and converting it in a docset using `dashing`, but that would have implied to use two tools I don't have any experience in and the resulting docset can be difficult to debug (as you will see further below) if anything went wrong somewhere. If the Microsoft Azure people want to do it this way, they are more than welcome. So out with the second option.
+Theoretically, I could have tried to generate the HTML documentation using `DocFx` and converting it in a docset using `dashing`, but that would have implied to use two tools I don't have any experience in and the resulting docset can be difficult to debug (as you will see further below) if anything went wrong somewhere. If the Microsoft Azure people want to do it this way, they are more than welcome. So out with the second option.
 
 Third option it is, then.
 
@@ -243,7 +243,7 @@ As said in the official documentation, there is a limited number of entry "types
 
 # Packaging the docset
 
-Once you've got every html source files and you've populated the database, just tar-gz the folder while conserving the structure within the archive (relative path folders). 
+Once you've got every HTML source files and you've populated the database, just tar-gz the folder while conserving the structure within the archive (relative path folders). 
 This python snippet does the trick :
 
 {% highlight python %}
@@ -269,7 +269,7 @@ At the end of it, you -hopefully- get a well formed docset archive that can be i
 Notice anything ? It's really ugly, except if you're a [brutalist afficionado](http://brutalistwebsites.com/) (disclaimer : I'm not). Furthermore, you can't tell from an image, but navigation links are broken : you can't click-click and turning those items purple, which makes me sad.
 
 
-Fixing paths imply to parse and rewrite the downloaded html files, while supporting css "themes" usually ends up using a headless web browser to do the scraping. They are cumbersome and brittle operations, which is probably why most [user-contributed docsets](https://github.com/Kapeli/Dash-User-Contributions#readme) don't bother doing it.
+Fixing paths imply to parse and rewrite the downloaded HTML files, while supporting css "themes" usually ends up using a headless web browser to do the scraping. They are cumbersome and brittle operations, which is probably why most [user-contributed docsets](https://github.com/Kapeli/Dash-User-Contributions#readme) don't bother doing it.
 
 # Fixing paths
 
@@ -282,9 +282,9 @@ into :
 `<a href="powershell/module/Microsoft.PowerShell.Archive/index.html" data-linktype="relative-path">`
 
 
-There is also a fuckton a nav bars , dropdown menu and sidebars DOM elements that need to be removed. Fortunately for me, the docs html pages are well-formated and there is little to none variability in how the DOM is structured. I have basically three types of pages : the `index.html`, each own modules' index.html and each cmdlets page. 
+There is also a fuckton a nav bars , dropdown menu and sidebars DOM elements that need to be removed. Fortunately for me, the docs HTML pages are well-formated and there is little to none variability in how the DOM is structured. I have basically three types of pages : the `index.html`, each own modules' index.html and each cmdlets page. 
 
-[`BeautifulSoup`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is the go-to python library for parsing html contents and it does the job admirably. 
+[`BeautifulSoup`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is the go-to python library for parsing HTML contents and it does the job admirably. 
 
 
 # downloading themes and javascript
