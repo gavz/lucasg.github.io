@@ -32,9 +32,9 @@ Starting with `v1.7` ([https://github.com/lucasg/Dependencies/releases/tag/v1.7]
 -  `-modules` dump FILE resolved modules
 -  `-chain`  dump FILE whole dependency chain
 
-the `-dependencies` and `-modules` commands need to resolve the input binary file's dependencies, so it make take a while to return.
+the `-chain` and `-modules` commands need to resolve the input binary file's dependencies, so it make take a while to return.
 
-Every command switches support JSON output formatting if you need to return results in a computer-consumable way and automate reporting. However there is two notables exceptions : `-dependencies` and `-modules`, the reason being that I need to figure out how to deal with circular references in Json output.
+Every command switches support JSON output formatting if you need to return results in a computer-consumable way and automate reporting. However there is two notables exceptions : `-chain` and `-modules`, the reason being that I need to figure out how to deal with circular references in Json output.
 
 Below this post are examples of commands availables :
 
