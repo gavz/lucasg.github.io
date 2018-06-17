@@ -896,7 +896,7 @@ We have two heap structures we can use to "massage" the heap into an advantageou
 
 Since words usually fail at explaining exploitation steps, here's a drawing :
 
-![Heap layout](/assets/SSTIC2018_HeapLayout.BMP)
+![Heap layout](/assets/SSTIC2018_HeapLayout.bmp)
 
 
 The initial step consists of aligning the following heap block linearly :
