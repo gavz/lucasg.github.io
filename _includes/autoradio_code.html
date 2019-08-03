@@ -1,0 +1,86 @@
+<div style="display:block;width:300px" class="top-block">
+  	<img class="renault" src='https://upload.wikimedia.org/wikipedia/commons/5/5f/Renault_logo.jpg'>
+
+  <div class="precode-block">
+  	<p class="precode"> Entrer precode :
+  	 <input type="text" name="precode"  maxlength="4"  tabindex="1" placeholder="V188" />
+  	</p>
+  </div>
+
+  <div class="code-block">
+  	<button input="generateCode()">Générer</button>
+  	<label type="text" id="code" class="code"> Code : XXXX</label>
+  </div>
+  
+
+</div>
+
+<script type="text/javascript">
+	// toi aussi téma mes skillz incroyables en webdesign ! 
+
+	var btn = document.querySelector('button');
+	var precode = document.querySelector('input');
+	var code = document.querySelector('label');
+
+	btn.addEventListener('click', generateCode);
+
+	function generateCode() {
+	  var precode_val = precode.value;
+	  
+	 
+	  if (precode_val === "") {
+			alert("veuillez renseigner votre precode !");	
+	    return;
+		}
+		
+	  
+		precode_val = precode_val.toUpperCase();
+		var x = precode_val.charCodeAt(1) + (precode_val.charCodeAt(0) * 5 * 2  - 698)
+		var y = precode_val.charCodeAt(3) + (precode_val.charCodeAt(2) * 5 * 2 + x) - 0x210
+		var z = ((y << 3) - y) % 100;
+
+		var computed_code = Math.floor(z / 10) + (z % 10)*5*2 + ((0x103 % x) % 100) * 5 * 5 * 4;
+		computed_code = computed_code.toString();
+
+		// nodejs does not support String.padStart
+		var pad_length = Math.max(4-computed_code.length, 0);
+		computed_code = '0'.repeat(pad_length)  + computed_code;
+	  
+	  code.innerText  = " Code : " + computed_code;
+	}
+</script>
+
+<style>
+
+div.top-block {
+  border: 1px solid #ccc !important;
+  border-radius: 16px;
+  padding: 0.01em 16px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.renault {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+p.precode {
+  width: 100%;
+}
+
+input {
+  width: 60%;
+}
+
+label.code {
+  padding-right: 10px;
+  width: 60%;
+  text-align: right;
+  float:right;
+}
+</style>
