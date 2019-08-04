@@ -25,16 +25,16 @@ Récemment j'ai récupéré une voiture Renault qui venait de subir quelques ré
 
 Apparement, Renault place un "code de sécurité" sur les autoradios qu'ils installent dans leurs modèles de voiture. Quel est le modèle d'attaque, j'en sais trop rien (empêcher le vol d'autoradio ? lol) mais toujours est-il que ça existe, que ça m'empêche d'écouter de la musique et que la solution est d'aller demander le code à un garagiste Renault et potentiellement devoir mettre la main à la poche.
 
-Heureusement, c'est également possible de le faire soit même si on connait deux éléments : le "précode" et la routine qui dérive le "précode" en un code d'activation. Il y a plusieurs méthodes pour récupérer le précode est documenté sur plusieurs sites tiers : https://www.lecoindunet.com/recuperer-code-autoradio-renault-280.
+Heureusement, c'est également possible de le faire soit même si on connait deux éléments : le "précode" et la routine qui dérive le "précode" en un code d'activation. Il y a plusieurs méthodes pour récupérer le précode, la majorité étant documentée sur des sites tiers comme celui ci : [https://www.lecoindunet.com/recuperer-code-autoradio-renault-280](https://www.lecoindunet.com/recuperer-code-autoradio-renault-280).
 
-Toutefois, la routine de dérivation n'est pas documentée, les seuls alternatives pour réaliser la dérivation est soit [de cliquer sur une pub (qui ne sert à rien pour notre pb)](https://www.lecoindunet.com/https://www.lecoindunet.com/code-autoradio-renault), [lancer un binaire DOS (DOS ? really ?)](https://www.lecoindunet.com/recuperer-code-autoradio-renault-280) ou installer une app Andoid qui a l'air de se payer via de la pub :
+Toutefois, la routine de dérivation n'est pas documentée, les seuls alternatives pour réaliser la dérivation est soit [de cliquer sur une pub (qui ne sert à rien pour notre pb)](https://www.lecoindunet.com/https://www.lecoindunet.com/code-autoradio-renault), [de lancer un binaire DOS (DOS ? really ?)](https://www.lecoindunet.com/recuperer-code-autoradio-renault-280) ou d'installer une app Andoid qui a l'air de se payer avec tes données personnelles :
 
 ![](/assets/renault_garbage_app.jpg){:height="30%" width="30%"}
 
 J'aime pas trop installer des app chelous sur mon téléphone, donc j'ai plutôt téléchargé l'APK à la place et je l'ai ouvert dans Jeb. L'application possède assez peu de code, et il y a des strings de debug dans toutes les fonctions donc je suis tombé rapidement sur la fonction de dérivation du précode :
 
 ![](/assets/renault_derivation.PNG)
-(il y a aussi moyen de dériver à partir d'un code-barre présent à l'arrière de l'autoradio)
+(il y a aussi moyen de dériver le code à partir d'un code-barre présent à l'arrière de l'autoradio)
 
 Un peu de nettoyage de code, et une conversion en Python et on obtient la routine suivante :
 
