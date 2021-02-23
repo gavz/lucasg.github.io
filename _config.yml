@@ -21,8 +21,12 @@ repository: lucasg/lucasg.github.io
 
 excerpt_separator: <!--more-->
 
+collections:
+  resources:
+    sort_by: date
+
 # gems
-gems:
+plugins:
   - jekyll-feed
   - jemoji
   - jekyll-github-metadata

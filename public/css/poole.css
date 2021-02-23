@@ -261,6 +261,32 @@ tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
 }
 
+/* custom style for the giant pdb table */
+table.pdbtablestyle {
+  font-size: 10px;
+}
+
+/* custom style for the index.html TOC table */
+table.toctable {
+  border: none;
+}
+
+table.toctable thead {
+  border: none;
+}
+
+table.toctable td {
+  border: none;
+}
+
+table.toctable th {
+  text-align: left;
+  border: none;
+}
+
+table.toctable tbody tr:nth-child(odd) td,
+  tbody tr:nth-child(odd) th {
+}
 
 /*
  * Custom type
@@ -373,6 +399,12 @@ time.page-date{
   margin-top: -.5rem;
   margin-bottom: 1rem;
   color: #9a9a9a;
+}
+
+.table-date {
+  display: block;
+  color: #9a9a9a;
+  font-family: Menlo, Monaco, "Courier New", monospace;
 }
 
 /* Related posts */
